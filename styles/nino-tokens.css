@@ -1,0 +1,209 @@
+/* ============================================================
+   Nino Design System — Core Tokens
+   Colors + Typography
+   ============================================================ */
+
+:root {
+  /* ---------- Brand ---------- */
+  --nino-emerald-50:  #ECFDF5;
+  --nino-emerald-100: #D1FAE5;
+  --nino-emerald-200: #A7F3D0;
+  --nino-emerald-300: #6EE7B7;
+  --nino-emerald-400: #34D399;
+  --nino-emerald-500: #10B981;   /* secondary accent */
+  --nino-emerald-600: #059669;   /* PRIMARY brand color */
+  --nino-emerald-700: #047857;
+  --nino-emerald-800: #065F46;
+  --nino-emerald-900: #064E3B;
+
+  /* ---------- Neutrals (dark-first) ---------- */
+  --nino-ink-950: #0A0D12;   /* app background, deepest */
+  --nino-ink-900: #0F131A;   /* sidebar / topbar */
+  --nino-ink-850: #141925;   /* card solid */
+  --nino-ink-800: #1A2030;   /* card elevated */
+  --nino-ink-700: #252C3D;   /* hover / border strong */
+  --nino-ink-600: #323A4E;   /* border */
+  --nino-ink-500: #4A5268;   /* muted text on dark */
+  --nino-ink-400: #6B7489;   /* tertiary text */
+  --nino-ink-300: #9099AE;   /* secondary text */
+  --nino-ink-200: #C4CBDA;   /* body text subtle */
+  --nino-ink-100: #E4E8F1;   /* body text */
+  --nino-ink-50:  #F5F7FB;   /* strongest fg on dark */
+
+  /* ---------- Semantic avatar palette (playful) ---------- */
+  --nino-avatar-red:    #EF4444;
+  --nino-avatar-orange: #F97316;
+  --nino-avatar-amber:  #F59E0B;
+  --nino-avatar-emerald:#10B981;
+  --nino-avatar-teal:   #14B8A6;
+  --nino-avatar-sky:    #0EA5E9;
+  --nino-avatar-indigo: #6366F1;
+  --nino-avatar-violet: #8B5CF6;
+  --nino-avatar-pink:   #EC4899;
+
+  /* ---------- Status colors ---------- */
+  --nino-status-todo-bg:       #10B981;
+  --nino-status-todo-fg:       #062E22;
+  --nino-status-progress-bg:   #3B82F6;
+  --nino-status-progress-fg:   #0A1E40;
+  --nino-status-review-bg:     #F59E0B;
+  --nino-status-review-fg:     #3D2803;
+  --nino-status-blocked-bg:    #EF4444;
+  --nino-status-blocked-fg:    #3E0808;
+  --nino-status-hold-bg:       #F97316;
+  --nino-status-hold-fg:       #3D1A05;
+  --nino-status-done-bg:       #10B981;
+  --nino-status-done-fg:       #062E22;
+
+  /* ---------- Feedback ---------- */
+  --nino-success: #10B981;
+  --nino-warning: #F59E0B;
+  --nino-danger:  #EF4444;
+  --nino-info:    #3B82F6;
+
+  /* ---------- Semantic tokens — DARK (default) ---------- */
+  --bg-app:        var(--nino-ink-950);
+  --bg-surface:    rgba(20, 25, 37, 0.72);    /* translucent, shows ocean through */
+  --bg-surface-solid: var(--nino-ink-850);
+  --bg-elevated:   rgba(26, 32, 48, 0.88);
+  --bg-sidebar:    rgba(15, 19, 26, 0.78);
+  --bg-topbar:     rgba(10, 13, 18, 0.75);
+  --bg-input:      rgba(10, 13, 18, 0.55);
+  --bg-hover:      rgba(255, 255, 255, 0.04);
+  --bg-active:     rgba(16, 185, 129, 0.12);
+
+  --fg-primary:    var(--nino-ink-50);
+  --fg-secondary:  var(--nino-ink-200);
+  --fg-tertiary:   var(--nino-ink-300);
+  --fg-muted:      var(--nino-ink-400);
+  --fg-disabled:   var(--nino-ink-500);
+  --fg-accent:     var(--nino-emerald-500);
+  --fg-on-accent:  #02201A;
+
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default:rgba(255, 255, 255, 0.10);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-accent: var(--nino-emerald-600);
+
+  --brand-bg-image: none;
+  --brand-overlay: linear-gradient(180deg, rgba(10,13,18,0.55) 0%, rgba(10,13,18,0.88) 80%);
+
+  /* ---------- Radius ---------- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  /* ---------- Shadow ---------- */
+  --shadow-xs:  0 1px 2px rgba(0,0,0,0.25);
+  --shadow-sm:  0 2px 6px rgba(0,0,0,0.28);
+  --shadow-md:  0 6px 18px rgba(0,0,0,0.35);
+  --shadow-lg:  0 16px 40px rgba(0,0,0,0.45);
+  --shadow-xl:  0 28px 64px rgba(0,0,0,0.55);
+  --shadow-glow-emerald: 0 0 0 3px rgba(16,185,129,0.25);
+  --shadow-inner: inset 0 1px 0 rgba(255,255,255,0.04);
+
+  /* ---------- Spacing ---------- */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ---------- Typography ---------- */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --fs-xs:   11px;
+  --fs-sm:   12px;
+  --fs-base: 13px;
+  --fs-md:   14px;
+  --fs-lg:   16px;
+  --fs-xl:   18px;
+  --fs-2xl:  22px;
+  --fs-3xl:  28px;
+  --fs-4xl:  36px;
+  --fs-5xl:  48px;
+
+  --lh-tight:   1.15;
+  --lh-snug:    1.3;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.7;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+
+  /* ---------- Motion ---------- */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:   120ms;
+  --dur-base:   200ms;
+  --dur-slow:   320ms;
+}
+
+/* ---------- Light mode override ---------- */
+[data-theme="light"] {
+  --bg-app:        #F5F7FB;
+  --bg-surface:    rgba(255,255,255,0.86);
+  --bg-surface-solid: #FFFFFF;
+  --bg-elevated:   #FFFFFF;
+  --bg-sidebar:    rgba(255,255,255,0.88);
+  --bg-topbar:     rgba(245,247,251,0.9);
+  --bg-input:      #F5F7FB;
+  --bg-hover:      rgba(0,0,0,0.04);
+  --bg-active:     rgba(5,150,105,0.10);
+
+  --fg-primary:    #0F131A;
+  --fg-secondary:  #2F3646;
+  --fg-tertiary:   #5B6578;
+  --fg-muted:      #8892A6;
+  --fg-disabled:   #C4CBDA;
+  --fg-accent:     var(--nino-emerald-600);
+  --fg-on-accent:  #FFFFFF;
+
+  --border-subtle: rgba(15,19,26,0.06);
+  --border-default:rgba(15,19,26,0.10);
+  --border-strong: rgba(15,19,26,0.18);
+
+  --brand-overlay: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(245,247,251,0.92) 80%);
+}
+
+/* ============================================================
+   Base element styles
+   ============================================================ */
+
+html, body {
+  background: var(--bg-app);
+  color: var(--fg-primary);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 { font-size: var(--fs-4xl); font-weight: var(--fw-bold); letter-spacing: var(--tracking-tight); line-height: var(--lh-tight); }
+h2, .h2 { font-size: var(--fs-3xl); font-weight: var(--fw-semibold); letter-spacing: var(--tracking-tight); line-height: var(--lh-tight); }
+h3, .h3 { font-size: var(--fs-2xl); font-weight: var(--fw-semibold); letter-spacing: var(--tracking-tight); line-height: var(--lh-snug); }
+h4, .h4 { font-size: var(--fs-xl); font-weight: var(--fw-semibold); line-height: var(--lh-snug); }
+h5, .h5 { font-size: var(--fs-lg); font-weight: var(--fw-semibold); line-height: var(--lh-snug); }
+
+p { font-size: var(--fs-md); line-height: var(--lh-normal); color: var(--fg-secondary); }
+small, .caption { font-size: var(--fs-sm); color: var(--fg-tertiary); }
+.eyebrow { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--fg-tertiary); font-weight: var(--fw-medium); }
+code, kbd, .mono { font-family: var(--font-mono); font-size: 0.92em; }
