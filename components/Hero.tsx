@@ -6,16 +6,16 @@ import { HeroVariantToggle, type HeroVariant } from "@/components/HeroVariantTog
 
 const TERMINAL_SCRIPT = [
   { kind: "cmd" as const, text: "whoami" },
-  { kind: "out" as const, lines: ["Liam Hess — Cologne, Germany"] },
+  { kind: "out" as const, lines: ["Liam Hess — Bonn, Germany"] },
   { kind: "spacer" as const },
   { kind: "cmd" as const, text: "cat roles.json" },
   {
     kind: "json" as const,
     lines: [
-      { k: "primary", v: '"Product Owner"' },
+      { k: "primary", v: '"Product Manager"' },
       { k: "also", v: '["Designer", "Developer"]' },
-      { k: "exploring", v: '"AI"' },
-      { k: "based_in", v: '"Cologne, DE 🌍"', last: true },
+      { k: "exploring", v: '"AI & the world"' },
+      { k: "based_in", v: '"Bonn, Germany 🌍"', last: true },
     ],
   },
   { kind: "spacer" as const },
@@ -24,12 +24,14 @@ const TERMINAL_SCRIPT = [
     kind: "out" as const,
     lines: [
       "→ 200,000+ users reached at ZEISS Group",
-      "→ 3+ years shipping mobile & web product",
-      "→ 6+ countries spanned by teams led",
+      "→ 3+ years shipping mobile & web products",
+      "→ 1.2 B.Sc. grade — top 20 in 10 years of program",
+      "→ 36+ countries travelled",
+      "→ Soon first startup launch 🚀",
     ],
   },
   { kind: "spacer" as const },
-  { kind: "cmd" as const, text: "echo $ready_for_next_role" },
+  { kind: "cmd" as const, text: "echo $ready_for_more" },
   { kind: "out" as const, lines: ["true"], accent: true },
 ];
 
@@ -96,7 +98,7 @@ function TerminalHero() {
         <span className="tdot" />
         <span className="tdot" />
         <span className="tdot" />
-        <span className="terminal-title">liam@cologne — zsh — 78×24</span>
+        <span className="terminal-title">liam@world — zsh — 78×24</span>
       </div>
       <div className="terminal-body">
         {TERMINAL_SCRIPT.slice(0, step + 1).map((item, i) => {
@@ -211,10 +213,6 @@ export function Hero() {
       <div className="page">
         <div className="hero-grid">
           <div>
-            <div className="hero-eyebrow">
-              <span className="dot" />
-              <span>Available for new Product roles · Q3 2026</span>
-            </div>
             <h1>
               Designer.
               <br />
@@ -302,7 +300,7 @@ export function Hero() {
             </div>
           </div>
           <div>
-            <HeroVariantToggle value={variant} onChange={setVariant} />
+            {/* <HeroVariantToggle value={variant} onChange={setVariant} /> */}
             {variant === "profile" ? <ProfileCardHero /> : <TerminalHero />}
           </div>
         </div>
