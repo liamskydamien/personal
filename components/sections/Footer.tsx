@@ -60,8 +60,7 @@ export function Footer() {
           <div>{t.footer.copyright}</div>
           <div className="footer-links">
             <Link href="/impressum">{t.footer.imprintLink}</Link>
-            <Link href="/background">{t.footer.backgroundLink}</Link>
-            <a href={`mailto:${PROFILE.contact.email}`}>Email</a>
+            <Link href="https://cv.liamhess.dev">{t.footer.backgroundLink}</Link>
             <a
               href={`https://${PROFILE.contact.website}`}
               target="_blank"

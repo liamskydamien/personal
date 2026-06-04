@@ -1,11 +1,11 @@
 'use client';
 
-import { PROFILE } from "@/lib/profile";
 import { SectionHead } from "@/components/SectionHead";
-import { useLocale } from "@/lib/i18n/LocaleProvider";
+import { useLocale, useProfile } from "@/lib/i18n/LocaleProvider";
 
 export function SideProjects() {
   const { t } = useLocale();
+  const profile = useProfile();
 
   return (
     <section className="section" id="side" data-screen-label="Side projects">
@@ -16,7 +16,7 @@ export function SideProjects() {
           meta={t.sideProjects.meta}
         />
         <div className="side-grid">
-          {PROFILE.sideProjects.map((s, i) => (
+          {profile.sideProjects.map((s, i) => (
             <div key={i} className="side-card">
               <div className="side-card-head">
                 <h3>{s.title}</h3>

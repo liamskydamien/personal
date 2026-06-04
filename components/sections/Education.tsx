@@ -1,11 +1,11 @@
 'use client';
 
-import { PROFILE } from "@/lib/profile";
 import { SectionHead } from "@/components/SectionHead";
-import { useLocale } from "@/lib/i18n/LocaleProvider";
+import { useLocale, useProfile } from "@/lib/i18n/LocaleProvider";
 
 export function Education() {
   const { t } = useLocale();
+  const profile = useProfile();
 
   return (
     <section className="section" id="edu" data-screen-label="Education">
@@ -16,7 +16,7 @@ export function Education() {
           meta={t.education.meta}
         />
         <div className="edu-list">
-          {PROFILE.education.map((e, i) => (
+          {profile.education.map((e, i) => (
             <div key={i} className="edu-card">
               <div className="edu-date">{e.date}</div>
               <h4>{e.school}</h4>

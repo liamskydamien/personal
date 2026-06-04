@@ -7,25 +7,23 @@ import { PROFILE } from "@/lib/profile";
 export const IMPRINT = {
   provider: {
     name: PROFILE.name,
-    /** e.g. "Natürliche Person", "Einzelunternehmer", "GmbH" */
-    legalForm: "Natürliche Person",
   },
   address: {
-    street: "Musterstraße 1",
-    postalCode: "50667",
-    city: "Köln",
+    street: "Alter Heeresweg 11",
+    postalCode: "53639",
+    city: "Königswinter",
     country: "Deutschland",
   },
   contact: {
     email: PROFILE.contact.email,
-    phone: "+49 221 1234567",
   },
   website: `https://${PROFILE.contact.website}`,
   /** Leave undefined if you do not have a VAT ID (USt-IdNr.). */
   vatId: undefined as string | undefined,
 } as const;
 
-export function formatImprintAddress(): string {
-  const { street, postalCode, city, country } = IMPRINT.address;
-  return `${street}, ${postalCode} ${city}, ${country}`;
+export function formatImprintAddress(country?: string): string {
+  const { street, postalCode, city } = IMPRINT.address;
+  const countryLabel = country ?? IMPRINT.address.country;
+  return `${street}, ${postalCode} ${city}, ${countryLabel}`;
 }

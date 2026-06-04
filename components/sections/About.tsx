@@ -1,8 +1,7 @@
 'use client';
 
-import { PROFILE } from "@/lib/profile";
 import { SectionHead } from "@/components/SectionHead";
-import { useLocale } from "@/lib/i18n/LocaleProvider";
+import { useLocale, useProfile } from "@/lib/i18n/LocaleProvider";
 import type { RichText } from "@/lib/i18n/translations";
 
 function Rich({ parts }: { parts: RichText }) {
@@ -17,6 +16,7 @@ function Rich({ parts }: { parts: RichText }) {
 
 export function About() {
   const { t } = useLocale();
+  const profile = useProfile();
 
   return (
     <section className="section" id="about" data-screen-label="About">
@@ -34,7 +34,7 @@ export function About() {
             <p><Rich parts={t.about.p4} /></p>
           </div>
           <div className="about-stats">
-            {PROFILE.stats.map((s, i) => (
+            {profile.stats.map((s, i) => (
               <div key={i} className="stat">
                 <div className="stat-num">
                   {s.num}

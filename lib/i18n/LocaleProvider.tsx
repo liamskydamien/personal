@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
+import { getProfile, type Profile } from '@/lib/profile';
 import { translations, type Locale, type Translations } from './translations';
 
 type LocaleContextValue = {
@@ -29,4 +30,9 @@ export function LocaleProvider({
 
 export function useLocale(): LocaleContextValue {
   return useContext(LocaleContext);
+}
+
+export function useProfile(): Profile {
+  const { locale } = useLocale();
+  return getProfile(locale);
 }

@@ -1,11 +1,11 @@
 'use client';
 
-import { PROFILE } from "@/lib/profile";
 import { SectionHead } from "@/components/SectionHead";
-import { useLocale } from "@/lib/i18n/LocaleProvider";
+import { useLocale, useProfile } from "@/lib/i18n/LocaleProvider";
 
 export function Timeline() {
   const { t } = useLocale();
+  const profile = useProfile();
 
   return (
     <section className="section" id="timeline" data-screen-label="Timeline">
@@ -16,7 +16,7 @@ export function Timeline() {
           meta={t.timeline.meta}
         />
         <div className="timeline">
-          {PROFILE.work.map((w, i) => (
+          {profile.work.map((w, i) => (
             <div key={i} className={"tl-item" + (w.current ? " current" : "")}>
               <div className="tl-row">
                 <div className="tl-date">{w.date}</div>

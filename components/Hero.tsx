@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { PROFILE, type RoleId } from "@/lib/profile";
-import { useLocale } from "@/lib/i18n/LocaleProvider";
+import type { RoleId } from "@/lib/profile";
+import { useLocale, useProfile } from "@/lib/i18n/LocaleProvider";
 
 const TERMINAL_SCRIPT = [
   { kind: "cmd" as const, text: "whoami" },
@@ -161,6 +161,7 @@ function TerminalHero() {
 
 function ProfileCardHero() {
   const { t } = useLocale();
+  const profile = useProfile();
   const tabs: { id: RoleId; label: string }[] = [
     { id: "designer", label: t.hero.tabDesigner },
     { id: "developer", label: t.hero.tabDeveloper },
@@ -168,7 +169,7 @@ function ProfileCardHero() {
     { id: "ai", label: t.hero.tabAI },
   ];
   const [active, setActive] = useState<RoleId>("product");
-  const r = PROFILE.roles[active];
+  const r = profile.roles[active];
 
   return (
     <div className="profile-card">
@@ -208,6 +209,7 @@ function ProfileCardHero() {
 
 export function Hero() {
   const { t } = useLocale();
+  const profile = useProfile();
   return (
     <section className="hero" id="home">
       <div className="page">
@@ -222,7 +224,7 @@ export function Hero() {
             </h1>
             <p className="hero-lede">
               {t.hero.ledePrefix}{" "}
-              <strong style={{ color: "var(--fg-primary)" }}>{PROFILE.name}</strong>{" "}
+              <strong style={{ color: "var(--fg-primary)" }}>{profile.name}</strong>{" "}
               {t.hero.ledeSuffix}
             </p>
             <div className="hero-meta">
@@ -237,7 +239,7 @@ export function Hero() {
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                {PROFILE.location}
+                {profile.location}
               </div>
               <div className="hero-meta-item">
                 <svg
@@ -250,7 +252,7 @@ export function Hero() {
                   <rect x="3" y="5" width="18" height="14" rx="2" />
                   <path d="m3 7 9 6 9-6" />
                 </svg>
-                {PROFILE.contact.email}
+                {profile.contact.email}
               </div>
               <div className="hero-meta-item">
                 <svg
@@ -265,11 +267,11 @@ export function Hero() {
                   <path d="M12 2a15 15 0 0 1 0 20" />
                   <path d="M12 2a15 15 0 0 0 0 20" />
                 </svg>
-                {PROFILE.contact.website}
+                {profile.contact.website}
               </div>
             </div>
             <div className="hero-cta">
-              <a href={`mailto:${PROFILE.contact.email}`} className="btn btn-primary">
+              <a href={`mailto:${profile.contact.email}`} className="btn btn-primary">
                 <svg
                   className="icon"
                   viewBox="0 0 24 24"

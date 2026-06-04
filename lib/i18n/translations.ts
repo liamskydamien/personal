@@ -84,6 +84,17 @@ const en = {
     groupProduct: 'Product',
     groupDesign: 'Design',
     groupEngineering: 'Engineering',
+    product: [
+      'Product Management',
+      'Roadmap Management',
+      'Stakeholder Management',
+      'User Research',
+      'SCRUM',
+      'JIRA',
+      'Confluence',
+    ],
+    design: ['UX Design', 'Figma', 'Prototyping', 'Design Systems', 'Localisation'],
+    engineering: ['React Native', 'React.js', 'TypeScript', 'Next.js', 'Java', 'Spring Boot', 'SQL'],
   },
   timeline: {
     eyebrow: '03 / Experience',
@@ -124,7 +135,7 @@ const en = {
   footer: {
     copyright: '© 2026 Liam Hess · Built with AI and Passion',
     imprintLink: 'Imprint',
-    backgroundLink: 'Experience & Education →',
+    backgroundLink: 'CV',
   },
   background: {
     backLink: '← Back to home',
@@ -132,6 +143,48 @@ const en = {
     heading: 'The full ',
     headingAccent: 'background.',
     lede: 'Every role and every school behind the journey from customer service to Product Owner — start to now.',
+  },
+  imprint: {
+    metaTitle: 'Imprint — Liam Hess',
+    metaDescription:
+      'Provider identification under § 5 German Digital Services Act (DDG): name, address, and contact details.',
+    backLink: '← Back to home',
+    eyebrow: 'Legal information · § 5 DDG',
+    heading: 'Imprint',
+    lede:
+      'Provider identification under the German Digital Services Act (DDG) — easy to find, directly reachable, and always available.',
+    legalForm: 'Natural person',
+    addressCountry: 'Germany',
+    providerTitle: 'Information pursuant to § 5 DDG',
+    providerIntro:
+      'Service provider within the meaning of the Digital Services Act (DDG) is:',
+    contactTitle: 'Contact',
+    emailLabel: 'Email',
+    websiteLabel: 'Website',
+    contactNote:
+      'Email is available for quick, direct contact.',
+    vatTitle: 'VAT',
+    vatText: 'VAT identification number pursuant to § 27a German VAT Act:',
+    disputeTitle: 'Consumer dispute resolution',
+    disputeP1:
+      'We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.',
+    disputeP2Prefix:
+      'The European Commission provides a platform for online dispute resolution (ODR):',
+    liabilityContentTitle: 'Liability for content',
+    liabilityContent: [
+      'As a service provider, we are responsible for our own content on these pages under general law pursuant to § 7 (1) DDG. However, pursuant to §§ 8 to 10 DDG, we are not obliged as a service provider to monitor transmitted or stored third-party information or to investigate circumstances indicating illegal activity.',
+      'Obligations to remove or block the use of information under general law remain unaffected. Liability in this regard is only possible from the time of knowledge of a specific infringement. Upon becoming aware of corresponding infringements, we will remove such content immediately.',
+    ],
+    liabilityLinksTitle: 'Liability for links',
+    liabilityLinks: [
+      'Our offer contains links to external third-party websites over whose content we have no influence. We therefore cannot assume any liability for this external content. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking.',
+      'Permanent monitoring of the content of linked pages is not reasonable without concrete evidence of a legal violation. Upon becoming aware of legal violations, we will remove such links immediately.',
+    ],
+    copyrightTitle: 'Copyright',
+    copyright: [
+      'The content and works created by the site operator on these pages are subject to German copyright law. Reproduction, editing, distribution, and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator. Downloads and copies of this page are permitted only for private, non-commercial use.',
+      'Insofar as content on this page was not created by the operator, third-party copyrights are respected. Third-party content is marked as such. Should you nevertheless become aware of a copyright infringement, please notify us. Upon becoming aware of legal violations, we will remove such content immediately.',
+    ],
   },
 };
 
@@ -214,6 +267,17 @@ const de: typeof en = {
     groupProduct: 'Produkt',
     groupDesign: 'Design',
     groupEngineering: 'Engineering',
+    product: [
+      'Product Management',
+      'Roadmap Management',
+      'Stakeholder Management',
+      'User Research',
+      'SCRUM',
+      'JIRA',
+      'Confluence',
+    ],
+    design: ['UX Design', 'Figma', 'Prototyping', 'Design Systems', 'Lokalisierung'],
+    engineering: ['React Native', 'React.js', 'TypeScript', 'Next.js', 'Java', 'Spring Boot', 'SQL'],
   },
   timeline: {
     eyebrow: '03 / Erfahrung',
@@ -254,7 +318,7 @@ const de: typeof en = {
   footer: {
     copyright: '© 2026 Liam Hess · Mit KI und Leidenschaft gebaut',
     imprintLink: 'Impressum',
-    backgroundLink: 'Erfahrung & Bildung →',
+    backgroundLink: 'Lebenslauf',
   },
   background: {
     backLink: '← Zurück zur Startseite',
@@ -262,6 +326,48 @@ const de: typeof en = {
     heading: 'Der vollständige ',
     headingAccent: 'Hintergrund.',
     lede: 'Jede Rolle und jede Schule hinter dem Weg vom Kundenservice zum Product Owner — von Anfang bis heute.',
+  },
+  imprint: {
+    metaTitle: 'Impressum — Liam Hess',
+    metaDescription:
+      'Anbieterkennzeichnung nach § 5 Digitale-Dienste-Gesetz (DDG): Name, Anschrift und Kontaktdaten.',
+    backLink: '← Zur Startseite',
+    eyebrow: 'Rechtliche Angaben · § 5 DDG',
+    heading: 'Impressum',
+    lede:
+      'Anbieterkennzeichnung nach dem Digitale-Dienste-Gesetz (DDG) — leicht erkennbar, unmittelbar erreichbar und ständig verfügbar.',
+    legalForm: 'Natürliche Person',
+    addressCountry: 'Deutschland',
+    providerTitle: 'Angaben gemäß § 5 DDG',
+    providerIntro:
+      'Diensteanbieter im Sinne des Digitale-Dienste-Gesetzes (DDG) ist:',
+    contactTitle: 'Kontakt',
+    emailLabel: 'E-Mail',
+    websiteLabel: 'Website',
+    contactNote:
+      'Für eine schnelle, unmittelbare Erreichbarkeit steht die E-Mail zur Verfügung.',
+    vatTitle: 'Umsatzsteuer',
+    vatText: 'Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:',
+    disputeTitle: 'Verbraucherstreitbeilegung',
+    disputeP1:
+      'Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.',
+    disputeP2Prefix:
+      'Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:',
+    liabilityContentTitle: 'Haftung für Inhalte',
+    liabilityContent: [
+      'Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.',
+      'Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.',
+    ],
+    liabilityLinksTitle: 'Haftung für Links',
+    liabilityLinks: [
+      'Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.',
+      'Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.',
+    ],
+    copyrightTitle: 'Urheberrecht',
+    copyright: [
+      'Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.',
+      'Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.',
+    ],
   },
 };
 

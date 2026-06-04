@@ -3,27 +3,13 @@
 import { SectionHead } from "@/components/SectionHead";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
-const SKILL_ITEMS = {
-  product: [
-    "Product Management",
-    "Roadmap Management",
-    "Stakeholder Management",
-    "User Research",
-    "SCRUM",
-    "JIRA",
-    "Confluence",
-  ],
-  design: ["UX Design", "Figma", "Prototyping", "Design Systems", "Localisation"],
-  engineering: ["React Native", "React.js", "TypeScript", "Next.js", "Java", "Spring Boot", "SQL"],
-};
-
 export function Skills() {
   const { t } = useLocale();
 
   const groups = [
-    { title: t.skills.groupProduct, items: SKILL_ITEMS.product },
-    { title: t.skills.groupDesign, items: SKILL_ITEMS.design },
-    { title: t.skills.groupEngineering, items: SKILL_ITEMS.engineering },
+    { title: t.skills.groupProduct, items: t.skills.product },
+    { title: t.skills.groupDesign, items: t.skills.design },
+    { title: t.skills.groupEngineering, items: t.skills.engineering },
   ];
 
   return (
