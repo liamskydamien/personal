@@ -20,6 +20,7 @@ const NAV_ITEMS = [
   { href: (base: string) => `${base}#side`, label: "Projects", external: false },
   { href: (base: string) => `${base}#contact`, label: "Contact", external: false },
   { href: () => `https://cv.liamhess.dev`, label: "CV", external: true },
+  { href: () => `https://medium.com/@liamskydamien`, label: "Blog", external: true },
 ] as const;
 
 function NavLinks({

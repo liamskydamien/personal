@@ -1091,6 +1091,15 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ---------- Footer / Contact ---------- */
 
+.section-contact {
+  padding-bottom: 48px;
+}
+
+.section-footer {
+  padding-top: 0;
+  padding-bottom: 60px;
+}
+
 .contact-block {
   background: var(--bg-surface);
   border: 1px solid var(--border-default);
@@ -1128,9 +1137,8 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .footer {
-  padding: 40px 0 60px;
+  padding-top: 40px;
   border-top: 1px solid var(--border-subtle);
-  margin-top: 48px;
   display: flex;
   justify-content: space-between;
   font-size: 12px;
