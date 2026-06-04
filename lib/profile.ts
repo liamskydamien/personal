@@ -2,6 +2,8 @@ export interface Contact {
   email: string;
   website: string;
   github: string;
+  instagram: string;
+  threads: string;
   linkedin: string;
 }
 
@@ -90,6 +92,8 @@ export const PROFILE: Profile = {
     email: "liam@liamhess.com",
     website: "liamhess.com",
     github: "liamskydamien",
+    instagram: "liamsky_",
+    threads: "liamsky_",
     linkedin: "liam-hess",
   },
   stats: [

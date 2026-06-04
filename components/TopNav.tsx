@@ -1,15 +1,25 @@
 "use client";
-
 import Link from "next/link";
+
+import { Github, Instagram, Linkedin, Threads } from "iconoir-react";
+import { PROFILE } from "@/lib/profile";
 import { useCallback, useEffect, useId, useState } from "react";
+import { ExternalLink } from "lucide-react";
+
+interface NavItem {
+  href: (base: string) => string;
+  label: string;
+  pageKey?: "background" | "contact";
+  external?: boolean;
+}
 
 const NAV_ITEMS = [
-  { href: (base: string) => `${base}#about`, label: "About" },
-  { href: (base: string) => `${base}#work`, label: "Work" },
-  { href: (base: string) => `${base}#side`, label: "Side" },
-  { href: (base: string) => `${base}#ai`, label: "AI" },
-  { href: () => "/background", label: "Background", pageKey: "background" as const },
-  { href: (base: string) => `${base}#contact`, label: "Contact" },
+  { href: (base: string) => `${base}#about`, label: "About", external: false},
+  { href: (base: string) => `${base}#skills`, label: "Skills", external: false },
+  { href: (base: string) => `${base}#work`, label: "Work", external: false },
+  { href: (base: string) => `${base}#side`, label: "Projects", external: false },
+  { href: (base: string) => `${base}#contact`, label: "Contact", external: false },
+  { href: () => `https://cv.liamhess.dev`, label: "CV", external: true },
 ] as const;
 
 function NavLinks({
@@ -30,10 +40,12 @@ function NavLinks({
           <Link
             key={item.label}
             href={href}
-            className={active ? "active" : undefined}
+            className={`nav-link ${active ? "active" : ""}`}
+            aria-label={item.label}
             onClick={onNavigate}
           >
             {item.label}
+            {item.external && <ExternalLink width={12} height={12} />}
           </Link>
         );
       })}
@@ -86,14 +98,29 @@ export function TopNav({ page = "home" }: { page?: "home" | "background" }) {
             <NavLinks base={base} page={page} />
             <div className="nav-spacer" />
             <div className="nav-status">
-              <button type="button" className="btn btn-primary btn-sm">
-                Get in touch
-              </button>
+              <Link href={`https://www.linkedin.com/in/${PROFILE.contact.linkedin}/`} target="_blank" rel="noopener noreferrer">
+                <button className="btn btn-sm" aria-label="LinkedIn">
+                  <Linkedin width={20} height={20} />
+                </button>
+              </Link>
+              <Link href={`https://github.com/${PROFILE.contact.github}/`} target="_blank" rel="noopener noreferrer">
+                <button className="btn btn-sm" aria-label="GitHub">
+                  <Github width={20} height={20} />
+                </button>
+              </Link>
+              <Link href={`https://www.instagram.com/${PROFILE.contact.instagram}/`} target="_blank" rel="noopener noreferrer">
+                <button className="btn btn-sm" aria-label="Instagram">
+                  <Instagram width={20} height={20} />
+                </button>
+              </Link>
+              <Link href={`https://www.threads.net/${PROFILE.contact.threads}/`} target="_blank" rel="noopener noreferrer">
+                <button className="btn btn-sm" aria-label="Threads">
+                  <Threads width={20} height={20} />
+                </button>
+              </Link>
             </div>
-          </div>
-
-          <button
-            type="button"
+            </div>
+            <button type="button"
             className="topnav-menu-btn"
             aria-expanded={menuOpen}
             aria-controls={sidebarId}
