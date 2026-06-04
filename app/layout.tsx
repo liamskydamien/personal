@@ -7,6 +7,7 @@ import "./globals.css";
 import { getProfile } from "@/lib/profile";
 import { LocaleProvider } from "@/lib/i18n/LocaleProvider";
 import type { Locale } from "@/lib/i18n/translations";
+import { PostHogConsent } from "@/components/consent/PostHogConsent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,7 +50,9 @@ export default async function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body>
-        <LocaleProvider locale={locale}>{children}</LocaleProvider>
+        <LocaleProvider locale={locale}>
+          <PostHogConsent>{children}</PostHogConsent>
+        </LocaleProvider>
       </body>
     </html>
   );

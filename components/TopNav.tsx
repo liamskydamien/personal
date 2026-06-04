@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import posthog from "posthog-js";
 
 import { Github, Instagram, Linkedin, Threads } from "iconoir-react";
 import { PROFILE } from "@/lib/profile";
@@ -46,7 +47,10 @@ function NavLinks({
             href={href}
             className={`nav-link ${active ? "active" : ""}`}
             aria-label={label}
-            onClick={onNavigate}
+            onClick={() => {
+              posthog.capture("nav_link_clicked", { label: item.labelKey, external: item.external ?? false });
+              onNavigate?.();
+            }}
           >
             {label}
             {item.external && <ExternalLink width={12} height={12} />}
@@ -103,22 +107,22 @@ export function TopNav({ page = "home" }: { page?: "home" | "background" }) {
             <NavLinks base={base} page={page} />
             <div className="nav-spacer" />
             <div className="nav-status">
-              <Link href={`https://www.linkedin.com/in/${PROFILE.contact.linkedin}/`} target="_blank" rel="noopener noreferrer">
+              <Link href={`https://www.linkedin.com/in/${PROFILE.contact.linkedin}/`} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture("social_link_clicked", { platform: "linkedin", source: "nav" })}>
                 <button className="btn btn-sm" aria-label="LinkedIn">
                   <Linkedin width={20} height={20} />
                 </button>
               </Link>
-              <Link href={`https://github.com/${PROFILE.contact.github}/`} target="_blank" rel="noopener noreferrer">
+              <Link href={`https://github.com/${PROFILE.contact.github}/`} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture("social_link_clicked", { platform: "github", source: "nav" })}>
                 <button className="btn btn-sm" aria-label="GitHub">
                   <Github width={20} height={20} />
                 </button>
               </Link>
-              <Link href={`https://www.instagram.com/${PROFILE.contact.instagram}/`} target="_blank" rel="noopener noreferrer">
+              <Link href={`https://www.instagram.com/${PROFILE.contact.instagram}/`} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture("social_link_clicked", { platform: "instagram", source: "nav" })}>
                 <button className="btn btn-sm" aria-label="Instagram">
                   <Instagram width={20} height={20} />
                 </button>
               </Link>
-              <Link href={`https://www.threads.net/${PROFILE.contact.threads}/`} target="_blank" rel="noopener noreferrer">
+              <Link href={`https://www.threads.net/${PROFILE.contact.threads}/`} target="_blank" rel="noopener noreferrer" onClick={() => posthog.capture("social_link_clicked", { platform: "threads", source: "nav" })}>
                 <button className="btn btn-sm" aria-label="Threads">
                   <Threads width={20} height={20} />
                 </button>
@@ -131,7 +135,11 @@ export function TopNav({ page = "home" }: { page?: "home" | "background" }) {
             aria-expanded={menuOpen}
             aria-controls={sidebarId}
             aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
-            onClick={() => setMenuOpen((open) => !open)}
+            onClick={() => {
+              const opening = !menuOpen;
+              setMenuOpen(opening);
+              if (opening) posthog.capture("mobile_menu_opened");
+            }}
           >
             <span className="topnav-menu-icon" aria-hidden />
           </button>

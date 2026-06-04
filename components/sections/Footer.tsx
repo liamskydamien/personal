@@ -1,11 +1,13 @@
 'use client';
 
 import Link from "next/link";
+import posthog from "posthog-js";
 import { useRouter } from "next/navigation";
 import { PROFILE } from "@/lib/profile";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 import { setLocale } from "@/lib/i18n/actions";
 import type { Locale } from "@/lib/i18n/translations";
+import { useConsent } from "@/components/consent/ConsentProvider";
 
 const FLAG_CDN = 'https://hatscripts.github.io/circle-flags/flags';
 
@@ -20,6 +22,7 @@ function LanguageSelector() {
 
   async function handleSelect(next: Locale) {
     if (next === locale) return;
+    posthog.capture("language_changed", { from: locale, to: next });
     await setLocale(next);
     router.refresh();
   }
@@ -52,6 +55,14 @@ function LanguageSelector() {
 
 export function Footer() {
   const { t } = useLocale();
+  const { openSettings } = useConsent();
+
+  function handlePrivacySettings() {
+    if (posthog.is_capturing()) {
+      posthog.capture("footer_link_clicked", { label: "privacy_settings" });
+    }
+    openSettings();
+  }
 
   return (
     <section className="section section-footer" data-screen-label="Footer">
@@ -59,12 +70,16 @@ export function Footer() {
         <div className="footer">
           <div>{t.footer.copyright}</div>
           <div className="footer-links">
-            <Link href="/impressum">{t.footer.imprintLink}</Link>
-            <Link href="https://cv.liamhess.dev">{t.footer.backgroundLink}</Link>
+            <button type="button" className="footer-link-btn" onClick={handlePrivacySettings}>
+              {t.footer.privacySettingsLink}
+            </button>
+            <Link href="/impressum" onClick={() => posthog.capture("footer_link_clicked", { label: "imprint" })}>{t.footer.imprintLink}</Link>
+            <Link href="https://cv.liamhess.dev" onClick={() => posthog.capture("footer_link_clicked", { label: "cv" })}>{t.footer.backgroundLink}</Link>
             <a
               href={`https://${PROFILE.contact.website}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => posthog.capture("footer_link_clicked", { label: "website" })}
             >
               {PROFILE.contact.website}
             </a>

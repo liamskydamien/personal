@@ -136,6 +136,23 @@ const en = {
     copyright: '© 2026 Liam Hess · Built with AI and Passion',
     imprintLink: 'Imprint',
     backgroundLink: 'CV',
+    privacySettingsLink: 'Privacy settings',
+  },
+  consent: {
+    bannerAriaLabel: 'Cookie consent',
+    bannerTitle: 'Analytics cookies',
+    bannerText:
+      'This site uses PostHog to measure how visitors use the site. Accept to allow cookies and full analytics; decline to use cookieless, privacy-preserving analytics only.',
+    accept: 'Accept',
+    reject: 'Decline',
+    modalTitle: 'Privacy settings',
+    modalText:
+      'Choose whether PostHog may store cookies and use local storage for analytics. If you decline, analytics still runs in cookieless mode without storing data in your browser.',
+    statusLabel: 'Current choice:',
+    statusGranted: 'Analytics accepted',
+    statusDenied: 'Analytics declined (cookieless)',
+    statusPending: 'No choice yet',
+    close: 'Close',
   },
   background: {
     backLink: '← Back to home',
@@ -319,6 +336,23 @@ const de: typeof en = {
     copyright: '© 2026 Liam Hess · Mit KI und Leidenschaft gebaut',
     imprintLink: 'Impressum',
     backgroundLink: 'Lebenslauf',
+    privacySettingsLink: 'Datenschutz',
+  },
+  consent: {
+    bannerAriaLabel: 'Cookie-Einwilligung',
+    bannerTitle: 'Analyse-Cookies',
+    bannerText:
+      'Diese Website nutzt PostHog, um die Nutzung zu messen. Bei Zustimmung werden Cookies und vollständige Analyse verwendet; bei Ablehnung nur cookielose, datenschutzfreundliche Analyse.',
+    accept: 'Akzeptieren',
+    reject: 'Ablehnen',
+    modalTitle: 'Datenschutz-Einstellungen',
+    modalText:
+      'Legen Sie fest, ob PostHog Cookies und lokalen Speicher für Analysen nutzen darf. Bei Ablehnung läuft die Analyse weiterhin cookieless, ohne Daten in Ihrem Browser zu speichern.',
+    statusLabel: 'Aktuelle Auswahl:',
+    statusGranted: 'Analyse akzeptiert',
+    statusDenied: 'Analyse abgelehnt (cookieless)',
+    statusPending: 'Noch keine Auswahl',
+    close: 'Schließen',
   },
   background: {
     backLink: '← Zurück zur Startseite',

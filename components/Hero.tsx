@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import posthog from "posthog-js";
 import type { RoleId } from "@/lib/profile";
 import { useLocale, useProfile } from "@/lib/i18n/LocaleProvider";
 
@@ -171,6 +172,11 @@ function ProfileCardHero() {
   const [active, setActive] = useState<RoleId>("product");
   const r = profile.roles[active];
 
+  function handleTabChange(id: RoleId) {
+    setActive(id);
+    posthog.capture("hero_role_tab_changed", { tab: id });
+  }
+
   return (
     <div className="profile-card">
       <div className="profile-tabs" role="tablist">
@@ -179,7 +185,7 @@ function ProfileCardHero() {
             key={tab.id}
             type="button"
             className={"profile-tab" + (active === tab.id ? " active" : "")}
-            onClick={() => setActive(tab.id)}
+            onClick={() => handleTabChange(tab.id)}
           >
             {tab.label}
           </button>
@@ -271,7 +277,11 @@ export function Hero() {
               </div>
             </div>
             <div className="hero-cta">
-              <a href={`mailto:${profile.contact.email}`} className="btn btn-primary">
+              <a
+                href={`mailto:${profile.contact.email}`}
+                className="btn btn-primary"
+                onClick={() => posthog.capture("contact_email_clicked", { source: "hero" })}
+              >
                 <svg
                   className="icon"
                   viewBox="0 0 24 24"
@@ -284,7 +294,7 @@ export function Hero() {
                 </svg>
                 {t.hero.ctaContact}
               </a>
-              <a href="#work" className="btn btn-ghost">
+              <a href="#work" className="btn btn-ghost" onClick={() => posthog.capture("hero_cta_work_clicked")}>
                 {t.hero.ctaWork}
                 <svg
                   className="icon"

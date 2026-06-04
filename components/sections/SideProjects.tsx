@@ -1,5 +1,6 @@
 'use client';
 
+import posthog from "posthog-js";
 import { SectionHead } from "@/components/SectionHead";
 import { useLocale, useProfile } from "@/lib/i18n/LocaleProvider";
 
@@ -36,6 +37,7 @@ export function SideProjects() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ext-link"
+                  onClick={() => posthog.capture("side_project_link_clicked", { title: s.title, href: s.link!.href })}
                 >
                   → {s.link.label}
                 </a>
