@@ -1,6 +1,11 @@
+'use client';
+
 import { PROFILE } from "@/lib/profile";
+import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export function Contact() {
+  const { t } = useLocale();
+
   return (
     <section
       className="section section-contact"
@@ -13,13 +18,10 @@ export function Contact() {
             className="eyebrow"
             style={{ color: "var(--nino-emerald-400)", marginBottom: 14 }}
           >
-            {"// let's talk"}
+            {t.contact.eyebrow}
           </div>
-          <h2>Looking for a Product Manager who&nbsp;codes and designs?</h2>
-          <p>
-            I&apos;m open to senior PM / Product Owner roles where breadth across design,
-            engineering and product actually matters. Drop me a line — I read everything.
-          </p>
+          <h2>{t.contact.heading}</h2>
+          <p>{t.contact.p}</p>
           <div className="contact-actions">
             <a href={`mailto:${PROFILE.contact.email}`} className="btn btn-primary">
               <svg

@@ -1,14 +1,19 @@
+'use client';
+
 import { PROFILE } from "@/lib/profile";
 import { SectionHead } from "@/components/SectionHead";
+import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export function Education() {
+  const { t } = useLocale();
+
   return (
     <section className="section" id="edu" data-screen-label="Education">
       <div className="page">
         <SectionHead
-          eyebrow="07 / Education"
-          title="School and study."
-          meta="// 2012 — 2024"
+          eyebrow={t.education.eyebrow}
+          title={t.education.title}
+          meta={t.education.meta}
         />
         <div className="edu-list">
           {PROFILE.education.map((e, i) => (

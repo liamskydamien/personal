@@ -1,14 +1,19 @@
+'use client';
+
 import { PROFILE } from "@/lib/profile";
 import { SectionHead } from "@/components/SectionHead";
+import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export function Timeline() {
+  const { t } = useLocale();
+
   return (
     <section className="section" id="timeline" data-screen-label="Timeline">
       <div className="page">
         <SectionHead
-          eyebrow="03 / Experience"
-          title="A timeline of getting here."
-          meta="// 6 roles · 2018 — present"
+          eyebrow={t.timeline.eyebrow}
+          title={t.timeline.title}
+          meta={t.timeline.meta}
         />
         <div className="timeline">
           {PROFILE.work.map((w, i) => (

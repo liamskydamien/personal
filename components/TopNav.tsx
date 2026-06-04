@@ -5,23 +5,24 @@ import { Github, Instagram, Linkedin, Threads } from "iconoir-react";
 import { PROFILE } from "@/lib/profile";
 import { useCallback, useEffect, useId, useState } from "react";
 import { ExternalLink } from "lucide-react";
+import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 interface NavItem {
   href: (base: string) => string;
-  label: string;
+  labelKey: keyof ReturnType<typeof useLocale>["t"]["nav"];
   pageKey?: "background" | "contact";
   external?: boolean;
 }
 
-const NAV_ITEMS = [
-  { href: (base: string) => `${base}#about`, label: "About", external: false},
-  { href: (base: string) => `${base}#skills`, label: "Skills", external: false },
-  { href: (base: string) => `${base}#work`, label: "Work", external: false },
-  { href: (base: string) => `${base}#side`, label: "Projects", external: false },
-  { href: (base: string) => `${base}#contact`, label: "Contact", external: false },
-  { href: () => `https://cv.liamhess.dev`, label: "CV", external: true },
-  { href: () => `https://medium.com/@liamskydamien`, label: "Blog", external: true },
-] as const;
+const NAV_ITEMS: NavItem[] = [
+  { href: (base) => `${base}#about`, labelKey: "about", external: false },
+  { href: (base) => `${base}#skills`, labelKey: "skills", external: false },
+  { href: (base) => `${base}#work`, labelKey: "work", external: false },
+  { href: (base) => `${base}#side`, labelKey: "projects", external: false },
+  { href: (base) => `${base}#contact`, labelKey: "contact", external: false },
+  { href: () => `https://cv.liamhess.dev`, labelKey: "cv", external: true },
+  { href: () => `https://medium.com/@liamskydamien`, labelKey: "blog", external: true },
+];
 
 function NavLinks({
   base,
@@ -32,20 +33,22 @@ function NavLinks({
   page: "home" | "background";
   onNavigate?: () => void;
 }) {
+  const { t } = useLocale();
   return (
     <div className="nav-links">
       {NAV_ITEMS.map((item) => {
-        const href = "pageKey" in item ? item.href() : item.href(base);
+        const href = "pageKey" in item ? item.href("") : item.href(base);
         const active = "pageKey" in item && page === item.pageKey;
+        const label = t.nav[item.labelKey] as string;
         return (
           <Link
-            key={item.label}
+            key={item.labelKey}
             href={href}
             className={`nav-link ${active ? "active" : ""}`}
-            aria-label={item.label}
+            aria-label={label}
             onClick={onNavigate}
           >
-            {item.label}
+            {label}
             {item.external && <ExternalLink width={12} height={12} />}
           </Link>
         );
@@ -55,6 +58,7 @@ function NavLinks({
 }
 
 export function TopNav({ page = "home" }: { page?: "home" | "background" }) {
+  const { t } = useLocale();
   const base = page === "home" ? "" : "/";
   const [menuOpen, setMenuOpen] = useState(false);
   const sidebarId = useId();
@@ -120,12 +124,13 @@ export function TopNav({ page = "home" }: { page?: "home" | "background" }) {
                 </button>
               </Link>
             </div>
-            </div>
-            <button type="button"
+          </div>
+          <button
+            type="button"
             className="topnav-menu-btn"
             aria-expanded={menuOpen}
             aria-controls={sidebarId}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
             onClick={() => setMenuOpen((open) => !open)}
           >
             <span className="topnav-menu-icon" aria-hidden />
@@ -141,7 +146,7 @@ export function TopNav({ page = "home" }: { page?: "home" | "background" }) {
         <button
           type="button"
           className="topnav-backdrop"
-          aria-label="Close menu"
+          aria-label={t.nav.closeMenu}
           tabIndex={menuOpen ? 0 : -1}
           onClick={closeMenu}
         />
@@ -150,14 +155,14 @@ export function TopNav({ page = "home" }: { page?: "home" | "background" }) {
           className="topnav-sidebar"
           role="dialog"
           aria-modal="true"
-          aria-label="Navigation"
+          aria-label={t.nav.navigationLabel}
         >
           <div className="topnav-sidebar-head">
-            <span className="topnav-sidebar-title">Menu</span>
+            <span className="topnav-sidebar-title">{t.nav.menuLabel}</span>
             <button
               type="button"
               className="topnav-sidebar-close"
-              aria-label="Close menu"
+              aria-label={t.nav.closeMenu}
               onClick={closeMenu}
             >
               <span className="topnav-menu-icon" aria-hidden />
@@ -166,7 +171,7 @@ export function TopNav({ page = "home" }: { page?: "home" | "background" }) {
           <NavLinks base={base} page={page} onNavigate={closeMenu} />
           <div className="nav-status topnav-sidebar-status">
             <button type="button" className="topnav-sidebar-status-btn">
-              Get in touch
+              {t.nav.getInTouch}
             </button>
           </div>
         </aside>

@@ -1,14 +1,19 @@
+'use client';
+
 import { PROFILE } from "@/lib/profile";
 import { SectionHead } from "@/components/SectionHead";
+import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export function SideProjects() {
+  const { t } = useLocale();
+
   return (
     <section className="section" id="side" data-screen-label="Side projects">
       <div className="page">
         <SectionHead
-          eyebrow="05 / Side projects"
-          title="Things I build outside of work."
-          meta="// thesis · uni · exploration"
+          eyebrow={t.sideProjects.eyebrow}
+          title={t.sideProjects.title}
+          meta={t.sideProjects.meta}
         />
         <div className="side-grid">
           {PROFILE.sideProjects.map((s, i) => (
@@ -19,9 +24,9 @@ export function SideProjects() {
               </div>
               <p>{s.description}</p>
               <div className="chips" style={{ marginBottom: s.link ? 10 : 0 }}>
-                {s.tags.map((t) => (
-                  <span key={t} className="chip chip-mono">
-                    {t}
+                {s.tags.map((tag) => (
+                  <span key={tag} className="chip chip-mono">
+                    {tag}
                   </span>
                 ))}
               </div>

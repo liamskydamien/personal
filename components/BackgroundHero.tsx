@@ -1,6 +1,11 @@
+'use client';
+
 import Link from "next/link";
+import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export function BackgroundHero() {
+  const { t } = useLocale();
+
   return (
     <section className="hero" id="home" style={{ paddingTop: 56, paddingBottom: 32 }}>
       <div className="page">
@@ -16,18 +21,18 @@ export function BackgroundHero() {
             marginBottom: 18,
           }}
         >
-          ← Back to home
+          {t.background.backLink}
         </Link>
         <div className="hero-eyebrow" style={{ marginBottom: 20 }}>
           <span className="dot" />
-          <span>Experience &amp; Education · the long form</span>
+          <span>{t.background.eyebrow}</span>
         </div>
         <h1 style={{ fontSize: "clamp(36px, 4.6vw, 52px)" }}>
-          The full <span className="grad">background.</span>
+          {t.background.heading}
+          <span className="grad">{t.background.headingAccent}</span>
         </h1>
         <p className="hero-lede" style={{ marginTop: 18 }}>
-          Every role and every school behind the journey from customer service to Product Owner —
-          start to now.
+          {t.background.lede}
         </p>
       </div>
     </section>

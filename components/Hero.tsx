@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { PROFILE, type RoleId } from "@/lib/profile";
-import { HeroVariantToggle, type HeroVariant } from "@/components/HeroVariantToggle";
+import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 const TERMINAL_SCRIPT = [
   { kind: "cmd" as const, text: "whoami" },
-  { kind: "out" as const, lines: ["Liam Hess — Bonn, Germany"] },
+  { kind: "out" as const, lines: ["Liam Hess — Cologne, Germany"] },
   { kind: "spacer" as const },
   { kind: "cmd" as const, text: "cat roles.json" },
   {
@@ -15,7 +15,7 @@ const TERMINAL_SCRIPT = [
       { k: "primary", v: '"Product Manager"' },
       { k: "also", v: '["Designer", "Developer"]' },
       { k: "exploring", v: '"AI & the world"' },
-      { k: "based_in", v: '"Bonn, Germany 🌍"', last: true },
+      { k: "based_in", v: '"Cologne, Germany 🌍"', last: true },
     ],
   },
   { kind: "spacer" as const },
@@ -160,11 +160,12 @@ function TerminalHero() {
 }
 
 function ProfileCardHero() {
+  const { t } = useLocale();
   const tabs: { id: RoleId; label: string }[] = [
-    { id: "designer", label: "Designer" },
-    { id: "developer", label: "Developer" },
-    { id: "product", label: "Product" },
-    { id: "ai", label: "AI" },
+    { id: "designer", label: t.hero.tabDesigner },
+    { id: "developer", label: t.hero.tabDeveloper },
+    { id: "product", label: t.hero.tabProduct },
+    { id: "ai", label: t.hero.tabAI },
   ];
   const [active, setActive] = useState<RoleId>("product");
   const r = PROFILE.roles[active];
@@ -172,14 +173,14 @@ function ProfileCardHero() {
   return (
     <div className="profile-card">
       <div className="profile-tabs" role="tablist">
-        {tabs.map((t) => (
+        {tabs.map((tab) => (
           <button
-            key={t.id}
+            key={tab.id}
             type="button"
-            className={"profile-tab" + (active === t.id ? " active" : "")}
-            onClick={() => setActive(t.id)}
+            className={"profile-tab" + (active === tab.id ? " active" : "")}
+            onClick={() => setActive(tab.id)}
           >
-            {t.label}
+            {tab.label}
           </button>
         ))}
       </div>
@@ -193,9 +194,9 @@ function ProfileCardHero() {
             ))}
           </ul>
           <div className="role-tools chips">
-            {r.tools.map((t) => (
-              <span key={t} className="chip chip-mono">
-                {t}
+            {r.tools.map((tool) => (
+              <span key={tool} className="chip chip-mono">
+                {tool}
               </span>
             ))}
           </div>
@@ -206,26 +207,23 @@ function ProfileCardHero() {
 }
 
 export function Hero() {
-  const [variant, setVariant] = useState<HeroVariant>("terminal");
-
+  const { t } = useLocale();
   return (
     <section className="hero" id="home">
       <div className="page">
         <div className="hero-grid">
           <div>
             <h1>
-              Designer.
+              {t.hero.line1}
               <br />
-              Developer.
+              {t.hero.line2}
               <br />
-              <span className="grad">Product Manager.</span>
+              <span className="grad">{t.hero.line3}</span>
             </h1>
             <p className="hero-lede">
-              I&apos;m{" "}
-              <strong style={{ color: "var(--fg-primary)" }}>{PROFILE.name}</strong> — a Product
-              Owner who thinks in products, designs in Figma, and builds with code. 3+ years at
-              ZEISS shipping to 200,000+ users. Currently exploring AI as the next layer of how
-              products get made.
+              {t.hero.ledePrefix}{" "}
+              <strong style={{ color: "var(--fg-primary)" }}>{PROFILE.name}</strong>{" "}
+              {t.hero.ledeSuffix}
             </p>
             <div className="hero-meta">
               <div className="hero-meta-item">
@@ -282,10 +280,10 @@ export function Hero() {
                   <rect x="3" y="5" width="18" height="14" rx="2" />
                   <path d="m3 7 9 6 9-6" />
                 </svg>
-                Get in touch
+                {t.hero.ctaContact}
               </a>
               <a href="#work" className="btn btn-ghost">
-                See my work
+                {t.hero.ctaWork}
                 <svg
                   className="icon"
                   viewBox="0 0 24 24"
@@ -300,8 +298,7 @@ export function Hero() {
             </div>
           </div>
           <div>
-            {/* <HeroVariantToggle value={variant} onChange={setVariant} /> */}
-            {variant === "profile" ? <ProfileCardHero /> : <TerminalHero />}
+            <TerminalHero />
           </div>
         </div>
       </div>
