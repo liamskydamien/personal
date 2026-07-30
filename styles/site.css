@@ -905,15 +905,6 @@ button { font-family: inherit; cursor: pointer; }
   flex-wrap: wrap;
 }
 
-.proj-card.feature { grid-column: span 4; grid-row: span 2; padding: 0; }
-.proj-card.feature .proj-inner { padding: 28px; display: flex; flex-direction: column; height: 100%; }
-.proj-card.feature h3 { font-size: 26px; margin-bottom: 8px; }
-.proj-card.feature .proj-image-slot {
-  height: 220px;
-  margin-top: 16px;
-  border-radius: 10px;
-  overflow: hidden;
-}
 .proj-card.tall { grid-column: span 2; grid-row: span 2; }
 .proj-card.wide { grid-column: span 4; }
 .proj-card.half { grid-column: span 2; }
@@ -935,19 +926,6 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 8px;
 }
 
-.proj-image-slot {
-  background: rgba(10, 13, 18, 0.5);
-  border: 1px dashed var(--border-default);
-  border-radius: 10px;
-  flex: 1;
-  min-height: 140px;
-  display: grid;
-  place-items: center;
-  color: var(--fg-muted);
-  font-size: 11px;
-  font-family: var(--font-mono);
-  margin-top: 14px;
-}
 
 /* ---------- Side project list ---------- */
 
@@ -1362,12 +1340,6 @@ image-slot {
   color: var(--fg-secondary);
 }
 
-.proj-image-slot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
 
 /* ---------- Cookie consent ---------- */
 
@@ -1524,4 +1496,516 @@ image-slot {
   gap: 10px;
   justify-content: flex-end;
   flex-wrap: wrap;
+}
+
+/* ---------- Secacam showcase band (home #work) ---------- */
+
+/* Sits between the section head and the bento grid, so it separates downward. */
+.secacam-band {
+  padding-bottom: 44px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.secacam-band-inner {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+.secacam-band-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.secacam-appicon {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  flex-shrink: 0;
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-md);
+}
+.secacam-band-title {
+  margin: 6px 0 0;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--fg-primary);
+}
+.secacam-band-meta {
+  margin-top: 5px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+.secacam-band-lede {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--fg-secondary);
+  max-width: 62ch;
+}
+.secacam-band-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+/* ---------- Shot scroller (home band + case study) ---------- */
+
+.shot-scroller {
+  --shot-w: 208px;
+  /* Distance from the viewport edge to the .page content edge, so a full-bleed
+     track still lines its first card up with the grid above it.
+     100% (not 100vw) because body has overflow-x: hidden. */
+  --shot-gutter: max(32px, calc((100% - 1180px) / 2 + 32px));
+  position: relative;
+}
+.shot-scroller--full { --shot-w: 250px; }
+
+.shot-track {
+  display: flex;
+  gap: 16px;
+  padding-inline: var(--shot-gutter);
+  padding-block: 4px 2px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline-start: var(--shot-gutter);
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 var(--shot-gutter),
+    #000 calc(100% - 40px),
+    transparent 100%
+  );
+}
+.shot-track::-webkit-scrollbar { display: none; }
+.shot-track:focus-visible {
+  outline: 2px solid var(--nino-emerald-500);
+  outline-offset: 4px;
+  border-radius: var(--radius-md);
+}
+
+.shot-card {
+  flex: 0 0 var(--shot-w);
+  margin: 0;
+  scroll-snap-align: start;
+}
+.shot-frame {
+  aspect-ratio: 460 / 998;
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--bg-surface-solid);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out);
+}
+.shot-card:hover .shot-frame {
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+}
+.shot-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.shot-cap {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--fg-tertiary);
+}
+.shot-cap-index {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--nino-emerald-400);
+  flex-shrink: 0;
+}
+
+.shot-nav {
+  position: absolute;
+  top: calc(50% - 34px);
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  color: var(--fg-primary);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-md);
+  transition: opacity var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+.shot-nav:hover { background: var(--bg-surface-solid); }
+.shot-nav:focus-visible {
+  outline: 2px solid var(--nino-emerald-500);
+  outline-offset: 2px;
+}
+.shot-nav--prev { inset-inline-start: calc(var(--shot-gutter) - 20px); }
+.shot-nav--next { inset-inline-end: 20px; }
+.shot-nav:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+@media (hover: none) {
+  .shot-nav { display: none; }
+}
+
+/* ---------- Case study: /projects/secacam ---------- */
+
+.cs-hero {
+  padding: 96px 0 40px;
+  position: relative;
+}
+.cs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--nino-emerald-400);
+  margin-bottom: 18px;
+}
+.cs-back:hover { color: var(--nino-emerald-300); }
+.cs-hero h1 {
+  font-size: clamp(34px, 4.6vw, 52px);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  margin: 0 0 18px;
+  font-weight: 600;
+}
+.cs-hero h1 .grad {
+  background: linear-gradient(120deg, #6ee7b7 0%, #10b981 55%, #34d399 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.cs-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 22px 0 28px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+.cs-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.cs-meta-item::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--nino-emerald-500);
+}
+.cs-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cs-section { padding: 72px 0; }
+
+.cs-owned {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 40px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+}
+.cs-owned p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--fg-secondary);
+}
+.cs-owned-list {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.cs-owned-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--fg-secondary);
+}
+.cs-owned-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--nino-emerald-500);
+}
+.cs-owned-aside-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--nino-emerald-400);
+  margin-bottom: 12px;
+}
+.cs-owned-aside + .cs-owned-aside { margin-top: 28px; }
+
+.cs-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.cs-feature {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  transition: border-color var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out);
+}
+.cs-feature:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+/* The two AI headline features get a full row at every column count —
+   span 2 in a 3-col grid would leave a hole in the first row. */
+.cs-feature--wide {
+  grid-column: 1 / -1;
+  padding: 26px;
+}
+.cs-feature--wide p { max-width: 84ch; }
+.cs-feature h3 {
+  margin: 12px 0 8px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--fg-primary);
+}
+.cs-feature p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--fg-secondary);
+}
+
+.cs-video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.cs-video-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-default);
+  background: #000;
+  aspect-ratio: 16 / 9;
+}
+.cs-video-frame--short {
+  aspect-ratio: 9 / 16;
+  max-width: 300px;
+}
+.cs-video-btn {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: block;
+}
+.cs-video-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-out),
+    opacity var(--dur-base) var(--ease-out);
+}
+.cs-video-btn:hover img {
+  transform: scale(1.03);
+  opacity: 0.82;
+}
+.cs-video-btn:focus-visible {
+  outline: 2px solid var(--nino-emerald-500);
+  outline-offset: -2px;
+}
+.cs-video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: var(--nino-emerald-600);
+  color: #fff;
+  box-shadow: var(--shadow-lg), var(--shadow-glow-emerald);
+  pointer-events: none;
+}
+.cs-video-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.34);
+  color: var(--nino-emerald-300);
+  pointer-events: none;
+}
+.cs-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.cs-video-meta h3 {
+  margin: 14px 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--fg-primary);
+}
+.cs-video-meta p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--fg-secondary);
+}
+.cs-video-note {
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+}
+
+.cs-refs { display: grid; }
+.cs-ref {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--fg-secondary);
+  font-size: 14px;
+  transition: color var(--dur-fast) var(--ease-out),
+    padding-left var(--dur-fast) var(--ease-out);
+}
+.cs-ref:hover {
+  color: var(--fg-primary);
+  padding-left: 6px;
+}
+.cs-ref-host {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-muted);
+  flex-shrink: 0;
+}
+.cs-ref svg {
+  flex-shrink: 0;
+  color: var(--nino-emerald-400);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .shot-scroller { --shot-w: 190px; }
+  .shot-scroller--full { --shot-w: 210px; }
+  .cs-owned {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .cs-feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-video-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
+
+@media (max-width: 720px) {
+  .secacam-band {
+    padding-bottom: 32px;
+    margin-bottom: 36px;
+  }
+  .shot-scroller,
+  .shot-scroller--full {
+    --shot-w: 62vw;
+    --shot-gutter: 16px; /* matches .page padding at this breakpoint */
+  }
+  .shot-track {
+    mask-image: linear-gradient(
+      90deg,
+      #000 0,
+      #000 calc(100% - 28px),
+      transparent 100%
+    );
+  }
+  .cs-hero { padding: 80px 0 32px; }
+  .cs-section { padding: 48px 0; }
+  .cs-owned { padding: 24px; }
+  .cs-video-frame--short { max-width: 100%; }
+}
+
+@media (max-width: 520px) {
+  .shot-scroller,
+  .shot-scroller--full { --shot-w: 70vw; }
+  .cs-feature-grid { grid-template-columns: 1fr; }
+  .secacam-band-head { gap: 12px; }
+  .secacam-appicon {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shot-track { scroll-behavior: auto; }
+  .shot-frame,
+  .cs-video-btn img,
+  .cs-ref {
+    transition: none;
+  }
+  .shot-card:hover .shot-frame,
+  .cs-video-btn:hover img {
+    transform: none;
+  }
 }

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { Project } from "@/lib/profile";
 
 export function ProjectCard({ p }: { p: Project; idx?: number }) {
@@ -29,35 +28,6 @@ export function ProjectCard({ p }: { p: Project; idx?: number }) {
             }}
           />
           ZEISS Secacam · live
-        </div>
-      </div>
-    );
-  }
-
-  if (p.size === "feature") {
-    return (
-      <div className="proj-card feature">
-        <div className="proj-inner">
-          <div className="proj-eyebrow">{p.eyebrow}</div>
-          <h3>{p.title}</h3>
-          <div className="proj-role">{p.role}</div>
-          <p>{p.description}</p>
-          <div className="proj-meta">
-            {p.tags?.map((t) => (
-              <span key={t} className="chip chip-mono">
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="proj-image-slot">
-            <Image
-              src="/images/projects/secacam-placeholder.svg"
-              alt={`Screenshot placeholder for ${p.title}`}
-              width={800}
-              height={440}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
-          </div>
         </div>
       </div>
     );

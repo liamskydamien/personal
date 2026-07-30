@@ -8,6 +8,8 @@ import { useCallback, useEffect, useId, useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
+type NavPage = "home" | "background" | "project";
+
 interface NavItem {
   href: (base: string) => string;
   labelKey: keyof ReturnType<typeof useLocale>["t"]["nav"];
@@ -31,7 +33,7 @@ function NavLinks({
   onNavigate,
 }: {
   base: string;
-  page: "home" | "background";
+  page: NavPage;
   onNavigate?: () => void;
 }) {
   const { t } = useLocale();
@@ -61,7 +63,7 @@ function NavLinks({
   );
 }
 
-export function TopNav({ page = "home" }: { page?: "home" | "background" }) {
+export function TopNav({ page = "home" }: { page?: NavPage }) {
   const { t } = useLocale();
   const base = page === "home" ? "" : "/";
   const [menuOpen, setMenuOpen] = useState(false);

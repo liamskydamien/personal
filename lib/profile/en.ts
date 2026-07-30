@@ -129,16 +129,6 @@ export const profileEn: LocalizedProfileContent = {
   ],
   projects: [
     {
-      title: "ZEISS Secacam — Mobile & Web",
-      role: "Product Owner",
-      eyebrow: "Lead product",
-      description:
-        "The digital interface for ZEISS trail cameras. I own the roadmap, lead frontend teams across mobile and web, and align engineering, hardware and business stakeholders from concept to release.",
-      tags: ["React Native", "Next.js", "Roadmap", "200k+ users"],
-      size: "feature",
-      hasImage: true,
-    },
-    {
       title: "200K+ users",
       role: "Reach across mobile & web",
       eyebrow: "Scale",
@@ -170,7 +160,7 @@ export const profileEn: LocalizedProfileContent = {
       description:
         "Custom sites across four industries while studying — including a fully functional e-commerce store. Owned requirements, design and implementation.",
       tags: ["WordPress", "Figma", "E-Commerce"],
-      size: "third",
+      size: "half",
     },
     {
       title: "JIRA Issue Tracking Process",
@@ -179,7 +169,7 @@ export const profileEn: LocalizedProfileContent = {
       description:
         "Designed and rolled out an internal problem-tracking workflow in JIRA at ZEISS Consumer Products that measurably improved team response times.",
       tags: ["JIRA", "Process", "Ops"],
-      size: "third",
+      size: "half",
     },
   ],
   sideProjects: [

@@ -129,16 +129,6 @@ export const profileDe: LocalizedProfileContent = {
   ],
   projects: [
     {
-      title: "ZEISS Secacam — Mobile & Web",
-      role: "Product Owner",
-      eyebrow: "Lead-Produkt",
-      description:
-        "Digitale Oberfläche für ZEISS-Wildkameras. Ich verantworte die Roadmap, leite Frontend-Teams auf Mobile und Web und stimme Engineering, Hardware und Business von der Idee bis Release ab.",
-      tags: ["React Native", "Next.js", "Roadmap", "200k+ Nutzer"],
-      size: "feature",
-      hasImage: true,
-    },
-    {
       title: "200K+ Nutzer",
       role: "Reichweite Mobile & Web",
       eyebrow: "Skalierung",
@@ -170,7 +160,7 @@ export const profileDe: LocalizedProfileContent = {
       description:
         "Individuelle Sites in vier Branchen parallel zum Studium — inkl. voll funktionsfähigem E-Commerce. Anforderungen, Design und Umsetzung in eigener Hand.",
       tags: ["WordPress", "Figma", "E-Commerce"],
-      size: "third",
+      size: "half",
     },
     {
       title: "JIRA Issue-Tracking-Prozess",
@@ -179,7 +169,7 @@ export const profileDe: LocalizedProfileContent = {
       description:
         "Internen Problemtracking-Workflow in JIRA bei Carl Zeiss Consumer Products designed und ausgerollt — messbar schnellere Reaktionszeiten im Team.",
       tags: ["JIRA", "Prozess", "Ops"],
-      size: "third",
+      size: "half",
     },
   ],
   sideProjects: [
