@@ -6,9 +6,9 @@ export const profileDe: LocalizedProfileContent = {
   about:
     "Product Owner, der in Produkten denkt, in Figma designed und mit Code baut.",
   summary:
-    "Product Owner mit über 3 Jahren bei der ZEISS Group — Features für 200.000+ Nutzer auf Mobile und Web. Vom Designer zum PO an der Schnittstelle von UX, Engineering und den Menschen, die das Produkt nutzen. Hintergrund in Wirtschaftsinformatik, Frontend und Design — vom Roadmap über Figma bis Code.",
+    "Product Owner mit über 3 Jahren bei der ZEISS Group — App mit 200.000+ Downloads auf Mobile und Web. Vom Designer zum PO an der Schnittstelle von UX, Engineering und den Menschen, die das Produkt nutzen. Hintergrund in Wirtschaftsinformatik, Frontend und Design — vom Roadmap über Figma bis Code.",
   stats: [
-    { num: "200K", unit: "+", label: "Nutzer über Mobile & Web bei ZEISS" },
+    { num: "200K", unit: "+", label: "App-Downloads über Mobile & Web bei ZEISS" },
     { num: "3", unit: "+ J.", label: "Produktentwicklung bei ZEISS" },
     { num: "6", unit: "+", label: "Länder in Teams, die ich geleitet habe" },
     { num: "1,2", unit: "", label: "B.Sc.-Note — Top 20 in 10 Jahren Programm" },
@@ -69,9 +69,9 @@ export const profileDe: LocalizedProfileContent = {
       current: true,
       badges: ["Remote", "Mobile", "Web", "Produktmgmt"],
       description:
-        "Verantwortlich für die Entwicklungs-Roadmap der ZEISS Secacam Mobile- & Web-App — der digitalen Oberfläche für ZEISS-Wildkameras mit über 200.000 Nutzern.",
+        "Verantwortlich für die Entwicklungs-Roadmap der ZEISS Secacam Mobile- & Web-App — der digitalen Oberfläche für ZEISS-Wildkameras mit über 200.000 Downloads.",
       highlights: [
-        "Features für 200.000+ Nutzer auf Mobile und Web",
+        "Features für eine App mit 200.000+ Downloads auf Mobile und Web",
         "Leitung von Frontend-Teams über mehrere Zeitzonen",
         "Abstimmung mit Stakeholdern aus Engineering, Hardware und Business",
         "Produkt von der Idee bis zum Release",

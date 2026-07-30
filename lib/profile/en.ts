@@ -1,14 +1,14 @@
 import type { LocalizedProfileContent } from "./types";
 
 export const profileEn: LocalizedProfileContent = {
-  location: "Cologne, Germany",
+  location: "Bonn, Germany",
   tagline: "Designer · Developer · Product",
   about:
     "Product Owner who thinks in products, designs in Figma, and builds with code.",
   summary:
-    "Product Owner with 3+ years at ZEISS Group, shipping features to 200,000+ users across mobile and web. I've grown from Designer to PO and sit at the intersection of sharp UX, solid engineering, and a deep understanding of the people using the product. My background across business informatics, frontend development, and design lets me work fluently across disciplines — from roadmap to Figma to code.",
+    "Product Owner with 3+ years at ZEISS Group, shipping an app with 200,000+ downloads across mobile and web. I've grown from Designer to PO and sit at the intersection of sharp UX, solid engineering, and a deep understanding of the people using the product. My background across business informatics, frontend development, and design lets me work fluently across disciplines — from roadmap to Figma to code.",
   stats: [
-    { num: "200K", unit: "+", label: "users reached across mobile & web at ZEISS" },
+    { num: "200K", unit: "+", label: "app downloads across mobile & web at ZEISS" },
     { num: "3", unit: "+ yrs", label: "shipping product at ZEISS Group" },
     { num: "6", unit: "+", label: "countries spanned by teams I've led" },
     { num: "1.2", unit: "", label: "B.Sc. grade — top 20 in 10 years of program" },
@@ -69,9 +69,9 @@ export const profileEn: LocalizedProfileContent = {
       current: true,
       badges: ["Remote", "Mobile", "Web", "Product Mgmt"],
       description:
-        "Own the development roadmap for the ZEISS Secacam Mobile & Web App — the digital interface for ZEISS trail cameras, with 200,000+ combined users.",
+        "Own the development roadmap for the ZEISS Secacam Mobile & Web App — the digital interface for ZEISS trail cameras, with 200,000+ downloads.",
       highlights: [
-        "Shipping features to 200,000+ users across mobile and web",
+        "Shipping features for an app with 200,000+ downloads across mobile and web",
         "Leading frontend development teams across multiple time zones",
         "Aligning stakeholders from engineering, hardware and business",
         "Driving the product from concept to release",

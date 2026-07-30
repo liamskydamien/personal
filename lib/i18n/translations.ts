@@ -26,7 +26,7 @@ const en = {
     line3: 'Product Manager.',
     ledePrefix: "I'm",
     ledeSuffix:
-      '— a Product Owner who thinks in products, designs in Figma, and builds with code. 3+ years at ZEISS shipping to 200,000+ users. Currently exploring AI as the next layer of how products get made.',
+      '— a Product Owner who thinks in products, designs in Figma, and builds with code. 3+ years at ZEISS shipping an app with 200,000+ downloads. Currently exploring AI as the next layer of how products get made.',
     ctaContact: 'Get in touch',
     ctaWork: 'See my work',
     tabDesigner: 'Designer',
@@ -56,9 +56,9 @@ const en = {
       { t: 'In 2023 I joined the ' },
       { t: 'ZEISS Secacam', b: true },
       {
-        t: ' team as a designer and quickly grew into a Proxy Product Owner role. In 2024 I became the official Product Owner for the mobile and web app — a product that now reaches over ',
+        t: ' team as a designer and quickly grew into a Proxy Product Owner role. In 2024 I became the official Product Owner for the mobile and web app — an app with over ',
       },
-      { t: '200,000 users', b: true },
+      { t: '200,000 downloads', b: true },
       { t: '.' },
     ] as RichText,
     p4: [
@@ -71,7 +71,7 @@ const en = {
       },
     ] as RichText,
     statLabels: [
-      'users reached across mobile & web at ZEISS',
+      'app downloads across mobile & web at ZEISS',
       'shipping product at ZEISS Group',
       "countries spanned by teams I've led",
       'B.Sc. grade — top 20 in 10 years of program',
@@ -208,12 +208,12 @@ const en = {
     meta: {
       title: 'ZEISS Secacam — case study | Liam Hess',
       description:
-        'The app behind 200,000+ ZEISS trail cameras: AI animal recognition, Color the Night, the Activity Center and SecaTrack — and what I own as Product Owner for mobile and web.',
+        'The ZEISS Secacam app with 200,000+ downloads: AI animal recognition, Color the Night, the Activity Center and SecaTrack — and what I own as Product Owner for mobile and web.',
     },
     showcase: {
       eyebrow: '// flagship product',
       title: 'ZEISS Secacam',
-      meta: 'iOS · Android · Web — 200,000+ users — Product Owner since 2024',
+      meta: 'iOS · Android · Web — 200,000+ downloads — Product Owner since 2024',
       lede:
         'A trail camera is only as good as the app behind it. Secacam moves every capture from the forest to your pocket in seconds, then lets AI do the sorting — which species, which night, which corner of the territory.',
       ctaPrimary: 'Open the case study',
@@ -258,13 +258,13 @@ const en = {
     hero: {
       back: '← Back to work',
       eyebrow: 'Case study · ZEISS Secacam',
-      headingLead: 'The app behind ',
-      headingAccent: '200,000+ trail cameras.',
+      headingLead: 'The app with ',
+      headingAccent: '200,000+ downloads.',
       lede:
         'ZEISS Secacam is a connected trail camera system: the hardware sits in the forest, and the app is where the product actually happens. I own that app — roadmap, discovery, specs and release — across iOS, Android and the browser.',
       metaRole: 'Product Owner, mobile & web',
       metaSince: 'Proxy PO 2023 · PO since 2024',
-      metaScale: '200,000+ users',
+      metaScale: '200,000+ downloads',
       metaPlatforms: 'iOS · Android · Web',
       ctaAppStore: 'View on the App Store',
       ctaVideos: 'Watch the videos',
@@ -281,7 +281,7 @@ const en = {
         p3: 'Run discovery with hunters, then turn it into specs engineers can build from without a translation layer.',
         p4: 'Align engineering, hardware and business stakeholders so the app and the camera ship as one product.',
         p5: 'Own localisation across twenty languages, including the German and English source copy.',
-        p6: 'Keep a live product healthy for 200,000+ users while new AI features land on top of it.',
+        p6: 'Keep a live product healthy at 200,000+ downloads while new AI features land on top of it.',
       },
       stackTitle: 'Stack & tools',
       teamTitle: 'The team shape',
@@ -582,7 +582,7 @@ const de: typeof en = {
     line3: 'Product Manager.',
     ledePrefix: 'Ich bin',
     ledeSuffix:
-      '— ein Product Owner, der in Produkten denkt, in Figma designed und mit Code baut. 3+ Jahre bei ZEISS, 200.000+ Nutzer. Aktuell erforsche ich KI als nächste Ebene der Produktentwicklung.',
+      '— ein Product Owner, der in Produkten denkt, in Figma designed und mit Code baut. 3+ Jahre bei ZEISS, 200.000+ App-Downloads. Aktuell erforsche ich KI als nächste Ebene der Produktentwicklung.',
     ctaContact: 'Kontakt aufnehmen',
     ctaWork: 'Meine Projekte',
     tabDesigner: 'Designer',
@@ -612,10 +612,10 @@ const de: typeof en = {
       { t: '2023 wechselte ich zum ' },
       { t: 'ZEISS Secacam', b: true },
       {
-        t: '-Team als Designer und wuchs schnell in eine Proxy-Product-Owner-Rolle. 2024 wurde ich offizieller Product Owner der Mobile- und Web-App — ein Produkt, das jetzt über ',
+        t: '-Team als Designer und wuchs schnell in eine Proxy-Product-Owner-Rolle. 2024 wurde ich offizieller Product Owner der Mobile- und Web-App — eine App mit über ',
       },
-      { t: '200.000 Nutzer', b: true },
-      { t: ' erreicht.' },
+      { t: '200.000 Downloads', b: true },
+      { t: '.' },
     ] as RichText,
     p4: [
       {
@@ -627,7 +627,7 @@ const de: typeof en = {
       },
     ] as RichText,
     statLabels: [
-      'Nutzer über Mobile & Web bei ZEISS erreicht',
+      'App-Downloads über Mobile & Web bei ZEISS',
       'Jahre Produktentwicklung bei ZEISS',
       'Länder in Teams, die ich geleitet habe',
       'B.Sc. Note — Top 20 in 10 Jahren Programm',
@@ -764,12 +764,12 @@ const de: typeof en = {
     meta: {
       title: 'ZEISS Secacam — Case Study | Liam Hess',
       description:
-        'Die App hinter über 200.000 ZEISS Wildkameras: KI-Tiererkennung, Color the Night, Aktivitätscenter und SecaTrack — und wofür ich als Product Owner für Mobile und Web verantwortlich bin.',
+        'Die ZEISS Secacam App mit über 200.000 Downloads: KI-Tiererkennung, Color the Night, Aktivitätscenter und SecaTrack — und wofür ich als Product Owner für Mobile und Web verantwortlich bin.',
     },
     showcase: {
       eyebrow: '// Kernprodukt',
       title: 'ZEISS Secacam',
-      meta: 'iOS · Android · Web — 200.000+ Nutzer — Product Owner seit 2024',
+      meta: 'iOS · Android · Web — 200.000+ Downloads — Product Owner seit 2024',
       lede:
         'Eine Wildkamera ist nur so gut wie die App dahinter. Secacam bringt jede Aufnahme in Sekunden aus dem Revier aufs Handy — und überlässt das Sortieren der KI: welche Tierart, welche Nacht, welche Ecke des Reviers.',
       ctaPrimary: 'Case Study öffnen',
@@ -814,13 +814,13 @@ const de: typeof en = {
     hero: {
       back: '← Zurück zur Arbeit',
       eyebrow: 'Case Study · ZEISS Secacam',
-      headingLead: 'Die App hinter ',
-      headingAccent: '200.000+ Wildkameras.',
+      headingLead: 'Die App mit ',
+      headingAccent: '200.000+ Downloads.',
       lede:
         'ZEISS Secacam ist ein vernetztes Wildkamera-System: Die Hardware steht im Revier, in der App passiert das eigentliche Produkt. Diese App verantworte ich — Roadmap, Discovery, Spezifikation und Release — für iOS, Android und den Browser.',
       metaRole: 'Product Owner, Mobile & Web',
       metaSince: 'Proxy PO 2023 · PO seit 2024',
-      metaScale: '200.000+ Nutzer',
+      metaScale: '200.000+ Downloads',
       metaPlatforms: 'iOS · Android · Web',
       ctaAppStore: 'Im App Store ansehen',
       ctaVideos: 'Videos ansehen',
@@ -837,7 +837,7 @@ const de: typeof en = {
         p3: 'Discovery mit Jägerinnen und Jägern führen und daraus Spezifikationen machen, mit denen Entwicklungsteams ohne Übersetzungsschicht arbeiten können.',
         p4: 'Entwicklung, Hardware und Business so ausrichten, dass App und Kamera als ein Produkt erscheinen.',
         p5: 'Die Lokalisierung in zwanzig Sprachen verantworten, inklusive der deutschen und englischen Quelltexte.',
-        p6: 'Ein Live-Produkt für 200.000+ Nutzer stabil halten, während laufend neue KI-Funktionen dazukommen.',
+        p6: 'Ein Live-Produkt mit 200.000+ Downloads stabil halten, während laufend neue KI-Funktionen dazukommen.',
       },
       stackTitle: 'Stack & Tools',
       teamTitle: 'Das Team',

@@ -24,7 +24,7 @@ const TERMINAL_SCRIPT = [
   {
     kind: "out" as const,
     lines: [
-      "→ 200,000+ users reached at ZEISS Group",
+      "→ 200,000+ app downloads at ZEISS Group",
       "→ 3+ years shipping mobile & web products",
       "→ 1.2 B.Sc. grade — top 20 in 10 years of program",
       "→ 36+ countries travelled",
