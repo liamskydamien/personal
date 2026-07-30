@@ -3,7 +3,7 @@
 import Image from "next/image";
 import posthog from "posthog-js";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState, type CSSProperties } from "react";
 
 export interface Shot {
   id: string;
@@ -13,6 +13,10 @@ export interface Shot {
 }
 
 type ScrollerSource = "home_showcase" | "case_study";
+type ScrollerProject = "secacam" | "yourt";
+
+/** Intrinsic size of the App Store exports — differs per project. */
+const DEFAULT_FRAME = { width: 460, height: 998 };
 
 /**
  * App Store style screenshot strip: native horizontal scroll-snap for touch and
@@ -28,6 +32,8 @@ export function ShotScroller({
   prevLabel,
   nextLabel,
   source,
+  project = "secacam",
+  frame = DEFAULT_FRAME,
 }: {
   shots: Shot[];
   variant?: "compact" | "full";
@@ -36,6 +42,8 @@ export function ShotScroller({
   prevLabel: string;
   nextLabel: string;
   source: ScrollerSource;
+  project?: ScrollerProject;
+  frame?: { width: number; height: number };
 }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const trackId = useId();
@@ -71,10 +79,10 @@ export function ShotScroller({
     return () => ro.disconnect();
   }, [syncEdges]);
 
-  const frame = useRef(0);
+  const rafId = useRef(0);
   const onScroll = useCallback(() => {
-    cancelAnimationFrame(frame.current);
-    frame.current = requestAnimationFrame(syncEdges);
+    cancelAnimationFrame(rafId.current);
+    rafId.current = requestAnimationFrame(syncEdges);
   }, [syncEdges]);
 
   const scrollByCard = (direction: -1 | 1) => {
@@ -89,14 +97,17 @@ export function ShotScroller({
       left: direction * step,
       behavior: reduced.current ? "auto" : "smooth",
     });
-    posthog.capture("secacam_scroller_navigated", {
+    posthog.capture(`${project}_scroller_navigated`, {
       source,
       direction: direction === 1 ? "next" : "prev",
     });
   };
 
   return (
-    <div className={`shot-scroller shot-scroller--${variant}`}>
+    <div
+      className={`shot-scroller shot-scroller--${variant}`}
+      style={{ "--shot-aspect": `${frame.width} / ${frame.height}` } as CSSProperties}
+    >
       <button
         type="button"
         className="shot-nav shot-nav--prev"
@@ -124,8 +135,8 @@ export function ShotScroller({
               <Image
                 src={shot.src}
                 alt={shot.alt}
-                width={460}
-                height={998}
+                width={frame.width}
+                height={frame.height}
                 sizes="(max-width: 720px) 70vw, 260px"
                 loading={i < 2 ? "eager" : "lazy"}
               />

@@ -109,7 +109,7 @@ const en = {
   sideProjects: {
     eyebrow: '05 / Side projects',
     title: 'Things I build outside of work.',
-    meta: '// thesis · uni · exploration',
+    meta: '// festival app · thesis · uni · exploration',
   },
   currentlyExploring: {
     eyebrow: '06 / Now',
@@ -386,6 +386,179 @@ const en = {
       },
     },
   },
+  yourt: {
+    appIconAlt: 'Yourt app icon',
+    meta: {
+      title: 'Yourt — case study | Liam Hess',
+      description:
+        'A festival app that syncs lineups, friends and money: shared set planning, a live map of the grounds, QR invites, expenses and shopping lists — built solo in three weeks with Claude Code, Cursor and Supabase.',
+    },
+    showcase: {
+      eyebrow: '// personal project',
+      title: 'Yourt',
+      meta: 'iOS · Android · Web — solo build in 3 weeks — zero to one with AI',
+      lede:
+        '“Which artist are you going to see?” — the one question a festival weekend keeps producing, and the one nobody could answer without a dozen screenshots in a group chat. Yourt puts the lineup, your friends and the shared money in one app.',
+      ctaPrimary: 'Open the case study',
+      ctaSecondary: 'See the screens',
+    },
+    scroller: {
+      label: 'Yourt app screenshots',
+      hint: 'Use the left and right arrow keys to scroll through the screenshots.',
+      prev: 'Previous screenshots',
+      next: 'Next screenshots',
+    },
+    shots: {
+      home: {
+        caption: 'What is on right now, and where the crew is standing.',
+        alt: 'App screenshot: home screen with a “Recommended now” card for a live act and a “Friends right now” row showing which friend is at which stage.',
+      },
+      timetable: {
+        caption: 'Mark a set, and see who else in the crew marked it.',
+        alt: 'App screenshot: festival timetable by stage and day, with marked sets highlighted and friend avatars on the acts they are attending. Headline on the image (English): “Same festival, same plan.”',
+      },
+      map: {
+        caption: 'Friends, stages and shared pins on the actual festival grounds.',
+        alt: 'App screenshot: map of the festival site with stages, food courts, shared pins and live friend positions. Headline on the image (English): “Lost your friends?”',
+      },
+      lists: {
+        caption: 'One shopping list the whole group edits.',
+        alt: 'App screenshot: shared shopping list with a progress bar, items still needed and items already bought, each showing who paid. Headline on the image (English): “How much do I owe you?”',
+      },
+      expenses: {
+        caption: 'Group balances and a settle-up flow at the end of the weekend.',
+        alt: 'App screenshot: expenses tab showing your balance, total spent, group total, a “Settle up” button and per-person balances.',
+      },
+      rating: {
+        caption: 'Rate each set on music, energy and show.',
+        alt: 'App screenshot: rating screen for a single set with star ratings for music, energy and show plus an optional comment field. Headline on the image (English): “Best set of the weekend?”',
+      },
+    },
+    hero: {
+      back: '← Back to side projects',
+      eyebrow: 'Case study · Yourt',
+      headingLead: 'Which artist are ',
+      headingAccent: 'you going to see?',
+      lede:
+        'Yourt is a festival app that syncs the lineup, your friends and the shared weekend budget. It started as a personal challenge — solve the one question that keeps coming up on every festival, and build the whole thing with AI in the loop.',
+      metaRole: 'Solo — product, design & code',
+      metaSince: 'Idea to working app in 3 weeks',
+      metaScale: 'Zero to one with AI',
+      metaPlatforms: 'iOS · Android · Web',
+      ctaScreens: 'See the screens',
+      ctaBuild: 'How it was built',
+    },
+    build: {
+      eyebrow: '01 / The build',
+      title: 'A personal challenge, shipped.',
+      meta: '// solo, with AI in the loop',
+      lede:
+        'Aligning which sets you and your friends want to attend used to be a tedious job: screenshots of the timetable, a group chat, and someone always ending up at the wrong stage. I wanted to fix that — and to find out how far AI-assisted development actually gets you on a real, multi-user product rather than a demo.',
+      points: {
+        p1: 'Took Yourt from idea to a working multi-user app in three weeks, next to a full-time job.',
+        p2: 'Designed the data model first — festivals, sets, marks, friendships, groups, expenses — because every social feature stands or falls with the schema.',
+        p3: 'Used Claude Code and Cursor as the implementation layer, and kept product decisions, scope and review on my side.',
+        p4: 'Built on Supabase for auth, realtime sync and row-level security, so the privacy rules live in the database rather than in the UI.',
+        p5: 'Shipped to iOS, Android and the web from a single React Native and Expo codebase.',
+        p6: 'Cut everything that was not the core loop: mark a set, see your friends, plan the weekend together.',
+      },
+      stackTitle: 'Stack & tools',
+      teamTitle: 'The team shape',
+      teamText:
+        'A team of one, with agents doing most of the typing. That shifts the job rather than shrinking it: less time writing code, far more time deciding what should exist, reviewing what came back, and keeping the architecture coherent.',
+    },
+    gallery: {
+      eyebrow: '02 / The app',
+      title: 'Six screens, one weekend.',
+      meta: '// swipe, or use the arrows',
+    },
+    features: {
+      eyebrow: '03 / Features',
+      title: 'What the app can do.',
+      meta: '// eight capabilities across planning, social and money',
+      items: {
+        lineup: {
+          badge: 'Core',
+          title: 'Shared lineup planning',
+          body: 'Every act on the timetable, by stage and by day. Mark the sets you want to see and the app immediately shows who else in your crew marked the same one — the negotiation that used to happen over screenshots now happens inside the schedule itself. Clashes are visible while there is still time to decide, not once you are standing in front of the wrong stage.',
+        },
+        map: {
+          badge: 'Live',
+          title: 'Live map of the grounds',
+          body: 'Stages, food courts and facilities on a map of the actual site, with your friends’ live positions on top. Shared pins and status notes carry the rest — “meeting at the flag”, “we moved to Mainstage” — so a lost crew is a glance rather than a phone call that will not connect on festival reception.',
+        },
+        social: {
+          badge: 'Social',
+          title: 'Friends, groups & QR invites',
+          body: 'A full social layer: friend requests, crews and groups, and QR code invites so joining a group at the gate takes one scan instead of a username somebody has to spell out over the bass.',
+        },
+        privacy: {
+          badge: 'Control',
+          title: 'Granular privacy',
+          body: 'Location, marked sets and lists are shared per person and per group, so you decide what each circle sees. Sharing your position with your crew for an afternoon should not mean broadcasting it to everyone you ever added.',
+        },
+        expenses: {
+          badge: 'Money',
+          title: 'Expense tracker',
+          body: 'Who paid for the camping gear, who owes what, and one balance per person at the end. Group totals, individual shares and a settle-up flow, so the weekend does not end in mental accounting.',
+        },
+        shopping: {
+          badge: 'Planning',
+          title: 'Shared shopping list',
+          body: 'The supply run as one list the whole group edits — what is still needed, who added it, who bought it, with progress across the crew. Nobody comes back with the third pack of the same thing.',
+        },
+        rating: {
+          badge: 'Fun',
+          title: 'Set ratings',
+          body: 'Rate every set on music, energy and show, drop a comment, and settle the only argument that matters on the way home: which act actually won the weekend.',
+        },
+        crossPlatform: {
+          badge: 'Platforms',
+          title: 'One codebase, three platforms',
+          body: 'React Native and Expo put the same app on iOS, Android and the web, with Supabase behind it for auth, data, realtime sync and row-level security.',
+        },
+      },
+    },
+    caseStudy: {
+      eyebrow: '04 / Zero to one with AI',
+      title: 'Building a real product with AI in the loop.',
+      meta: '// full write-up in progress',
+      noteBadge: 'Work in progress',
+      noteTitle: 'The detailed case study is still being written.',
+      noteBody:
+        'What follows is the short version: the three-week arc and the first learnings. The full write-up — every challenge, every dead end, and what AI was genuinely good and genuinely bad at — will replace this section.',
+      phasesTitle: 'The three weeks',
+      phases: {
+        week1: {
+          title: 'Week 1 — schema & skeleton',
+          body: 'Data model, auth and the festival/lineup core. The first week decided how far the rest could go: get festivals, sets and marks wrong and every social feature after it inherits the mistake.',
+        },
+        week2: {
+          title: 'Week 2 — the social layer',
+          body: 'Friends, groups, QR invites, privacy rules and live locations — the part where a single-player planner turns into something worth opening with other people.',
+        },
+        week3: {
+          title: 'Week 3 — money, polish & platforms',
+          body: 'Expenses, shopping lists and set ratings, then the pass that makes it feel like an app: navigation, empty states, and the same build running on iOS, Android and the web.',
+        },
+      },
+      learningsTitle: 'Early learnings',
+      learnings: {
+        scope: {
+          title: 'Scope is the bottleneck, not code',
+          body: 'When implementation stops being the constraint, deciding what not to build becomes the whole job. The three weeks were spent on judgement far more than on syntax.',
+        },
+        schema: {
+          title: 'Own the data model yourself',
+          body: 'Agents happily produce a schema that works for the screen in front of them. Privacy rules, group membership and shared expenses need one that works for every screen after it — that part stayed mine.',
+        },
+        review: {
+          title: 'Reviewing beats typing',
+          body: 'The quality of the product tracked the quality of my review loop, not the quality of the prompts. Reading every diff carefully was the actual work.',
+        },
+      },
+    },
+  },
 };
 
 const de: typeof en = {
@@ -492,7 +665,7 @@ const de: typeof en = {
   sideProjects: {
     eyebrow: '05 / Nebenprojekte',
     title: 'Was ich außerhalb der Arbeit baue.',
-    meta: '// Thesis · Uni · Erkundung',
+    meta: '// Festival-App · Thesis · Uni · Erkundung',
   },
   currentlyExploring: {
     eyebrow: '06 / Aktuell',
@@ -766,6 +939,179 @@ const de: typeof en = {
         product: 'Die ZEISS Secacam Wildkamera — Hardware, Pakete und Praxis',
         appStore: 'ZEISS Secacam im App Store',
         playStore: 'ZEISS Secacam bei Google Play',
+      },
+    },
+  },
+  yourt: {
+    appIconAlt: 'App-Icon der Yourt App',
+    meta: {
+      title: 'Yourt — Case Study | Liam Hess',
+      description:
+        'Eine Festival-App, die Line-up, Freunde und Geld synchronisiert: gemeinsame Set-Planung, Live-Karte des Geländes, QR-Einladungen, Ausgaben und Einkaufslisten — solo in drei Wochen mit Claude Code, Cursor und Supabase gebaut.',
+    },
+    showcase: {
+      eyebrow: '// Privatprojekt',
+      title: 'Yourt',
+      meta: 'iOS · Android · Web — solo in 3 Wochen — Zero to One mit KI',
+      lede:
+        '„Zu welchem Artist gehst du?“ — die eine Frage, die jedes Festivalwochenende produziert, und die niemand ohne ein Dutzend Screenshots im Gruppenchat beantworten konnte. Yourt bringt Line-up, Freunde und die gemeinsame Kasse in eine App.',
+      ctaPrimary: 'Case Study öffnen',
+      ctaSecondary: 'Screens ansehen',
+    },
+    scroller: {
+      label: 'Screenshots der Yourt App',
+      hint: 'Mit den Pfeiltasten links und rechts durch die Screenshots blättern.',
+      prev: 'Vorherige Screenshots',
+      next: 'Nächste Screenshots',
+    },
+    shots: {
+      home: {
+        caption: 'Was gerade läuft — und wo die Crew steht.',
+        alt: 'App-Screenshot: Startseite mit einer Karte „Recommended now“ für einen laufenden Act und einer Reihe „Friends right now“, die zeigt, welcher Freund an welcher Bühne ist.',
+      },
+      timetable: {
+        caption: 'Ein Set markieren und sehen, wer aus der Crew es auch markiert hat.',
+        alt: 'App-Screenshot: Festival-Timetable nach Bühne und Tag, mit hervorgehobenen markierten Sets und Avataren der Freunde bei den Acts, zu denen sie gehen. Bildüberschrift (englisch): „Same festival, same plan.“',
+      },
+      map: {
+        caption: 'Freunde, Bühnen und geteilte Pins auf dem echten Festivalgelände.',
+        alt: 'App-Screenshot: Karte des Festivalgeländes mit Bühnen, Foodcourts, geteilten Pins und Live-Positionen der Freunde. Bildüberschrift (englisch): „Lost your friends?“',
+      },
+      lists: {
+        caption: 'Eine Einkaufsliste, die die ganze Gruppe bearbeitet.',
+        alt: 'App-Screenshot: geteilte Einkaufsliste mit Fortschrittsbalken, noch benötigten und bereits gekauften Artikeln samt Angabe, wer bezahlt hat. Bildüberschrift (englisch): „How much do I owe you?“',
+      },
+      expenses: {
+        caption: 'Gruppensalden und Ausgleich am Ende des Wochenendes.',
+        alt: 'App-Screenshot: Ausgaben-Tab mit eigenem Saldo, Gesamtausgaben, Gruppensumme, Schaltfläche „Settle up“ und den Salden aller Beteiligten.',
+      },
+      rating: {
+        caption: 'Jedes Set nach Musik, Energie und Show bewerten.',
+        alt: 'App-Screenshot: Bewertungsseite für ein einzelnes Set mit Sternebewertung für Musik, Energie und Show sowie optionalem Kommentarfeld. Bildüberschrift (englisch): „Best set of the weekend?“',
+      },
+    },
+    hero: {
+      back: '← Zurück zu den Nebenprojekten',
+      eyebrow: 'Case Study · Yourt',
+      headingLead: 'Zu welchem Artist ',
+      headingAccent: 'gehst du?',
+      lede:
+        'Yourt ist eine Festival-App, die das Line-up, deine Freunde und die gemeinsame Wochenendkasse synchronisiert. Entstanden ist sie als persönliche Challenge: genau diese eine Frage lösen — und dabei herausfinden, wie weit KI-gestützte Entwicklung bei einem echten Mehrbenutzerprodukt wirklich trägt.',
+      metaRole: 'Solo — Produkt, Design & Code',
+      metaSince: 'Von der Idee zur App in 3 Wochen',
+      metaScale: 'Zero to One mit KI',
+      metaPlatforms: 'iOS · Android · Web',
+      ctaScreens: 'Screens ansehen',
+      ctaBuild: 'Wie es gebaut wurde',
+    },
+    build: {
+      eyebrow: '01 / Der Bau',
+      title: 'Eine persönliche Challenge — fertig gebaut.',
+      meta: '// solo, mit KI im Loop',
+      lede:
+        'Abzustimmen, welche Sets man mit seinen Freunden sehen will, war bisher mühsam: Screenshots vom Timetable, ein Gruppenchat, und am Ende steht immer jemand an der falschen Bühne. Das wollte ich lösen — und gleichzeitig herausfinden, wie weit KI-gestützte Entwicklung bei einem echten Produkt kommt und nicht nur bei einem Demo.',
+      points: {
+        p1: 'Yourt in drei Wochen von der Idee zur funktionierenden Mehrbenutzer-App gebracht — neben dem Vollzeitjob.',
+        p2: 'Zuerst das Datenmodell entworfen — Festivals, Sets, Markierungen, Freundschaften, Gruppen, Ausgaben — weil jede soziale Funktion mit dem Schema steht und fällt.',
+        p3: 'Claude Code und Cursor als Umsetzungsschicht genutzt und Produktentscheidungen, Scope und Review bei mir behalten.',
+        p4: 'Auf Supabase gebaut — Auth, Realtime-Sync und Row Level Security —, damit die Privatsphäre-Regeln in der Datenbank liegen und nicht im UI.',
+        p5: 'Aus einer einzigen React-Native- und Expo-Codebasis auf iOS, Android und Web ausgeliefert.',
+        p6: 'Alles gestrichen, was nicht zum Kern gehört: Set markieren, Freunde sehen, das Wochenende gemeinsam planen.',
+      },
+      stackTitle: 'Stack & Tools',
+      teamTitle: 'Das Team',
+      teamText:
+        'Ein Team aus einer Person — das Tippen übernehmen die Agents. Das verschiebt die Arbeit, statt sie zu verkleinern: weniger Code schreiben, deutlich mehr entscheiden, was überhaupt entstehen soll, prüfen, was zurückkommt, und die Architektur zusammenhalten.',
+    },
+    gallery: {
+      eyebrow: '02 / Die App',
+      title: 'Sechs Screens, ein Wochenende.',
+      meta: '// wischen oder die Pfeile nutzen',
+    },
+    features: {
+      eyebrow: '03 / Funktionen',
+      title: 'Was die App kann.',
+      meta: '// acht Funktionen aus Planung, Social und Kasse',
+      items: {
+        lineup: {
+          badge: 'Kern',
+          title: 'Gemeinsame Line-up-Planung',
+          body: 'Jeder Act im Timetable, nach Bühne und Tag. Markiere die Sets, die du sehen willst, und die App zeigt sofort, wer aus deiner Crew dasselbe markiert hat — die Abstimmung, die früher über Screenshots lief, passiert jetzt direkt im Zeitplan. Überschneidungen sind sichtbar, solange man sich noch entscheiden kann, und nicht erst vor der falschen Bühne.',
+        },
+        map: {
+          badge: 'Live',
+          title: 'Live-Karte des Geländes',
+          body: 'Bühnen, Foodcourts und Sanitäranlagen auf einer Karte des echten Geländes, darüber die Live-Positionen deiner Freunde. Geteilte Pins und Status-Notizen erledigen den Rest — „Treffpunkt Fahne“, „wir sind an der Mainstage“ —, damit eine verlorene Crew ein Blick ist und kein Anruf, der im Festivalnetz ohnehin nicht durchgeht.',
+        },
+        social: {
+          badge: 'Social',
+          title: 'Freunde, Gruppen & QR-Einladungen',
+          body: 'Eine vollständige soziale Ebene: Freundschaftsanfragen, Crews und Gruppen sowie QR-Code-Einladungen. Am Eingang einer Gruppe beitreten heißt einmal scannen — statt einen Benutzernamen gegen die Bässe zu buchstabieren.',
+        },
+        privacy: {
+          badge: 'Kontrolle',
+          title: 'Feingranulare Privatsphäre',
+          body: 'Standort, markierte Sets und Listen werden pro Person und pro Gruppe geteilt — du entscheidest, was welcher Kreis sieht. Die Position einen Nachmittag lang mit der Crew zu teilen, darf nicht heißen, sie an alle jemals hinzugefügten Kontakte zu senden.',
+        },
+        expenses: {
+          badge: 'Kasse',
+          title: 'Ausgaben-Tracker',
+          body: 'Wer das Campingzeug bezahlt hat, wer wem was schuldet, und am Ende ein Saldo pro Person. Gruppensummen, individuelle Anteile und ein Ausgleichs-Flow — damit das Wochenende nicht im Kopfrechnen endet.',
+        },
+        shopping: {
+          badge: 'Planung',
+          title: 'Geteilte Einkaufsliste',
+          body: 'Der Großeinkauf als eine Liste, die die ganze Gruppe bearbeitet — was noch fehlt, wer es eingetragen hat, wer es gekauft hat, mit Fortschritt über die ganze Crew. Niemand kommt mit der dritten Packung desselben Artikels zurück.',
+        },
+        rating: {
+          badge: 'Spaß',
+          title: 'Set-Bewertungen',
+          body: 'Jedes Set nach Musik, Energie und Show bewerten, Kommentar dazu — und auf der Heimfahrt die einzige Frage klären, die wirklich zählt: Welcher Act hat das Wochenende gewonnen?',
+        },
+        crossPlatform: {
+          badge: 'Plattformen',
+          title: 'Eine Codebasis, drei Plattformen',
+          body: 'React Native und Expo bringen dieselbe App auf iOS, Android und ins Web, dahinter Supabase für Auth, Daten, Realtime-Sync und Row Level Security.',
+        },
+      },
+    },
+    caseStudy: {
+      eyebrow: '04 / Zero to One mit KI',
+      title: 'Ein echtes Produkt mit KI im Loop bauen.',
+      meta: '// ausführliche Fassung in Arbeit',
+      noteBadge: 'In Arbeit',
+      noteTitle: 'Die ausführliche Case Study wird gerade geschrieben.',
+      noteBody:
+        'Hier steht vorerst die Kurzfassung: der Drei-Wochen-Verlauf und die ersten Learnings. Die vollständige Fassung — jede Hürde, jede Sackgasse und wofür KI wirklich taugt und wofür nicht — ersetzt diesen Abschnitt später.',
+      phasesTitle: 'Die drei Wochen',
+      phases: {
+        week1: {
+          title: 'Woche 1 — Schema & Grundgerüst',
+          body: 'Datenmodell, Auth und der Festival- und Line-up-Kern. Die erste Woche entschied, wie weit der Rest tragen konnte: Sind Festivals, Sets und Markierungen falsch modelliert, erbt jede soziale Funktion danach den Fehler.',
+        },
+        week2: {
+          title: 'Woche 2 — die soziale Ebene',
+          body: 'Freunde, Gruppen, QR-Einladungen, Privatsphäre-Regeln und Live-Standorte — der Teil, in dem aus einem Einzelspieler-Planer etwas wird, das man mit anderen öffnet.',
+        },
+        week3: {
+          title: 'Woche 3 — Kasse, Feinschliff & Plattformen',
+          body: 'Ausgaben, Einkaufslisten und Set-Bewertungen, dann der Durchgang, der daraus eine App macht: Navigation, leere Zustände und derselbe Build auf iOS, Android und im Web.',
+        },
+      },
+      learningsTitle: 'Erste Learnings',
+      learnings: {
+        scope: {
+          title: 'Der Engpass ist der Scope, nicht der Code',
+          body: 'Wenn die Umsetzung nicht mehr die Grenze ist, wird die Entscheidung, was man nicht baut, zur eigentlichen Arbeit. Die drei Wochen gingen viel mehr in Urteilsvermögen als in Syntax.',
+        },
+        schema: {
+          title: 'Das Datenmodell gehört dir',
+          body: 'Agents liefern bereitwillig ein Schema, das für den Screen vor ihnen funktioniert. Privatsphäre-Regeln, Gruppenmitgliedschaften und geteilte Ausgaben brauchen eines, das für alle folgenden Screens funktioniert — dieser Teil blieb bei mir.',
+        },
+        review: {
+          title: 'Review schlägt Tippen',
+          body: 'Die Qualität des Produkts hing an der Qualität meiner Review-Schleife, nicht an der Qualität der Prompts. Jedes Diff sorgfältig zu lesen war die eigentliche Arbeit.',
+        },
       },
     },
   },

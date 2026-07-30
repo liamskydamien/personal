@@ -1498,25 +1498,25 @@ image-slot {
   flex-wrap: wrap;
 }
 
-/* ---------- Secacam showcase band (home #work) ---------- */
+/* ---------- Project showcase band (home #work) ---------- */
 
 /* Sits between the section head and the bento grid, so it separates downward. */
-.secacam-band {
+.showcase-band {
   padding-bottom: 44px;
   margin-bottom: 48px;
   border-bottom: 1px solid var(--border-subtle);
 }
-.secacam-band-inner {
+.showcase-band-inner {
   display: grid;
   gap: 14px;
   margin-bottom: 26px;
 }
-.secacam-band-head {
+.showcase-band-head {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-.secacam-appicon {
+.showcase-appicon {
   width: 72px;
   height: 72px;
   border-radius: 16px;
@@ -1524,27 +1524,27 @@ image-slot {
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-md);
 }
-.secacam-band-title {
+.showcase-band-title {
   margin: 6px 0 0;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--fg-primary);
 }
-.secacam-band-meta {
+.showcase-band-meta {
   margin-top: 5px;
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--fg-muted);
 }
-.secacam-band-lede {
+.showcase-band-lede {
   margin: 0;
   font-size: 15px;
   line-height: 1.6;
   color: var(--fg-secondary);
   max-width: 62ch;
 }
-.secacam-band-cta {
+.showcase-band-cta {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
@@ -1598,7 +1598,8 @@ image-slot {
   scroll-snap-align: start;
 }
 .shot-frame {
-  aspect-ratio: 460 / 998;
+  /* Set per scroller: App Store exports differ in ratio between projects. */
+  aspect-ratio: var(--shot-aspect, 460 / 998);
   border-radius: 22px;
   overflow: hidden;
   background: var(--bg-surface-solid);
@@ -1806,6 +1807,41 @@ image-slot {
   line-height: 1.6;
   color: var(--fg-secondary);
 }
+/* Cards without a badge chip (case-study phases and learnings). */
+.cs-feature > h3:first-child { margin-top: 0; }
+
+/* Subheading inside a case-study section, above a secondary card grid. */
+.cs-subhead {
+  margin: 40px 0 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* Flags a section as a placeholder while the long-form text is being written. */
+.cs-note {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  padding: 22px;
+}
+.cs-note h3 {
+  margin: 12px 0 8px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--fg-primary);
+}
+.cs-note p {
+  margin: 0;
+  max-width: 78ch;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--fg-secondary);
+}
 
 .cs-video-grid {
   display: grid;
@@ -1963,7 +1999,7 @@ image-slot {
 }
 
 @media (max-width: 720px) {
-  .secacam-band {
+  .showcase-band {
     padding-bottom: 32px;
     margin-bottom: 36px;
   }
@@ -1990,8 +2026,8 @@ image-slot {
   .shot-scroller,
   .shot-scroller--full { --shot-w: 70vw; }
   .cs-feature-grid { grid-template-columns: 1fr; }
-  .secacam-band-head { gap: 12px; }
-  .secacam-appicon {
+  .showcase-band-head { gap: 12px; }
+  .showcase-appicon {
     width: 56px;
     height: 56px;
   }

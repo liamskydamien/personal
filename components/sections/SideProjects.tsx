@@ -2,6 +2,7 @@
 
 import posthog from "posthog-js";
 import { SectionHead } from "@/components/SectionHead";
+import { YourtShowcase } from "@/components/yourt/YourtShowcase";
 import { useLocale, useProfile } from "@/lib/i18n/LocaleProvider";
 
 export function SideProjects() {
@@ -16,6 +17,9 @@ export function SideProjects() {
           title={t.sideProjects.title}
           meta={t.sideProjects.meta}
         />
+      </div>
+      <YourtShowcase />
+      <div className="page">
         <div className="side-grid">
           {profile.sideProjects.map((s, i) => (
             <div key={i} className="side-card">

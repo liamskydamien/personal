@@ -30,11 +30,11 @@ export function SecacamShowcase() {
   }));
 
   return (
-    <div className="secacam-band">
-      <div className="page secacam-band-inner">
-        <div className="secacam-band-head">
+    <div className="showcase-band">
+      <div className="page showcase-band-inner">
+        <div className="showcase-band-head">
           <Image
-            className="secacam-appicon"
+            className="showcase-appicon"
             src={SECACAM_APP_ICON}
             alt={s.appIconAlt}
             width={144}
@@ -42,11 +42,11 @@ export function SecacamShowcase() {
           />
           <div>
             <div className="eyebrow">{s.showcase.eyebrow}</div>
-            <h3 className="secacam-band-title">{s.showcase.title}</h3>
-            <div className="secacam-band-meta">{s.showcase.meta}</div>
+            <h3 className="showcase-band-title">{s.showcase.title}</h3>
+            <div className="showcase-band-meta">{s.showcase.meta}</div>
           </div>
         </div>
-        <p className="secacam-band-lede">{s.showcase.lede}</p>
+        <p className="showcase-band-lede">{s.showcase.lede}</p>
       </div>
 
       <ShotScroller
@@ -59,7 +59,7 @@ export function SecacamShowcase() {
         source="home_showcase"
       />
 
-      <div className="page secacam-band-cta">
+      <div className="page showcase-band-cta">
         <Link
           href={SECACAM_CASE_STUDY_PATH}
           className="btn btn-primary"
