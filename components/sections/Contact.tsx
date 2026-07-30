@@ -1,5 +1,11 @@
 'use client';
 
+// Temporarily hidden — "Looking for a PM" contact card
+export function Contact() {
+  return null;
+}
+
+/*
 import posthog from "posthog-js";
 import { PROFILE } from "@/lib/profile";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
@@ -71,3 +77,4 @@ export function Contact() {
     </section>
   );
 }
+*/

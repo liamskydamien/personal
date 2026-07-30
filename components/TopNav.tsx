@@ -4,7 +4,7 @@ import posthog from "posthog-js";
 
 import { Github, Instagram, Linkedin, Threads } from "iconoir-react";
 import { PROFILE } from "@/lib/profile";
-import { useCallback, useEffect, useId, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
@@ -16,6 +16,9 @@ interface NavItem {
   pageKey?: "background" | "contact";
   external?: boolean;
 }
+
+const MOBILE_NAV_MQ = "(max-width: 720px)";
+const SCROLL_DELTA = 4;
 
 const NAV_ITEMS: NavItem[] = [
   { href: (base) => `${base}#about`, labelKey: "about", external: false },
@@ -67,6 +70,8 @@ export function TopNav({ page = "home" }: { page?: NavPage }) {
   const { t } = useLocale();
   const base = page === "home" ? "" : "/";
   const [menuOpen, setMenuOpen] = useState(false);
+  const [navHidden, setNavHidden] = useState(false);
+  const lastScrollY = useRef(0);
   const sidebarId = useId();
 
   const closeMenu = useCallback(() => setMenuOpen(false), []);
@@ -88,10 +93,44 @@ export function TopNav({ page = "home" }: { page?: NavPage }) {
     closeMenu();
   }, [page, closeMenu]);
 
+  useEffect(() => {
+    const mq = window.matchMedia(MOBILE_NAV_MQ);
+    lastScrollY.current = Math.max(0, window.scrollY);
+
+    const syncVisibility = () => {
+      if (!mq.matches || menuOpen) {
+        setNavHidden(false);
+        lastScrollY.current = Math.max(0, window.scrollY);
+        return;
+      }
+
+      const y = Math.max(0, window.scrollY);
+      const delta = y - lastScrollY.current;
+
+      if (y < 8) {
+        setNavHidden(false);
+      } else if (delta > SCROLL_DELTA) {
+        setNavHidden(true);
+      } else if (delta < -SCROLL_DELTA) {
+        setNavHidden(false);
+      }
+
+      lastScrollY.current = y;
+    };
+
+    syncVisibility();
+    window.addEventListener("scroll", syncVisibility, { passive: true });
+    mq.addEventListener("change", syncVisibility);
+    return () => {
+      window.removeEventListener("scroll", syncVisibility);
+      mq.removeEventListener("change", syncVisibility);
+    };
+  }, [menuOpen]);
+
   return (
     <>
       <nav
-        className={`topnav${menuOpen ? " topnav--open" : ""}`}
+        className={`topnav${menuOpen ? " topnav--open" : ""}${navHidden ? " topnav--hidden" : ""}`}
         aria-label="Main"
       >
         <div className="topnav-inner">

@@ -217,8 +217,18 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 720px) {
+  .topnav {
+    transition: transform 0.25s var(--ease-out);
+    will-change: transform;
+  }
+  .topnav--hidden {
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
   .topnav--open {
     z-index: 101;
+    transform: none;
+    pointer-events: auto;
   }
   .topnav-inner {
     padding: 10px 16px;
