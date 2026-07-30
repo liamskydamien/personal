@@ -926,6 +926,68 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 8px;
 }
 
+/* ---------- Mystery / coming-soon cards ---------- */
+
+.proj-mystery,
+.side-mystery {
+  background:
+    radial-gradient(120% 90% at 15% 0%, rgba(16, 185, 129, 0.10), transparent 60%),
+    var(--bg-surface);
+  border-style: dashed;
+  border-color: rgba(16, 185, 129, 0.28);
+}
+.proj-mystery:hover,
+.side-mystery:hover {
+  border-color: rgba(16, 185, 129, 0.5);
+}
+.proj-mystery .proj-eyebrow,
+.side-mystery .grade-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.proj-mystery .proj-eyebrow::before,
+.side-mystery .grade-pill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--nino-emerald-400);
+  animation: mystery-pulse 2.4s var(--ease-out) infinite;
+}
+.proj-mystery .proj-role {
+  color: var(--nino-emerald-400);
+}
+
+.mystery-glyph {
+  font-family: var(--font-mono);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 14px;
+  background: linear-gradient(120deg, #6EE7B7, #10B981);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.9;
+}
+.mystery-glyph-inline {
+  font-size: 17px;
+  margin: 0 8px 0 0;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+@keyframes mystery-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.8); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .proj-mystery .proj-eyebrow::before,
+  .side-mystery .grade-pill::before {
+    animation: none;
+  }
+}
 
 /* ---------- Side project list ---------- */
 

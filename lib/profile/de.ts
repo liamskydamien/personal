@@ -129,10 +129,13 @@ export const profileDe: LocalizedProfileContent = {
   ],
   projects: [
     {
-      title: "200K+ Nutzer",
-      role: "Reichweite Mobile & Web",
-      eyebrow: "Skalierung",
-      isStat: true,
+      title: "Etwas Neues mit ZEISS",
+      role: "Ankündigung folgt",
+      eyebrow: "Bald verfügbar",
+      description:
+        "Das nächste ZEISS-Projekt ist bereits in Arbeit — dasselbe Team, neues Produkt. Details bleiben noch unter Verschluss.",
+      tags: ["ZEISS", "In Arbeit"],
+      isMystery: true,
       size: "tall",
     },
     {
@@ -197,11 +200,12 @@ export const profileDe: LocalizedProfileContent = {
       tags: ["Figma", "Design Thinking", "Mobile"],
     },
     {
-      title: "KI-Workflows für PMs",
-      grade: "In Arbeit",
+      title: "Etwas Neues für Freelancer & Agenturen",
+      grade: "Bald verfügbar",
       description:
-        "Erkundung LLM-gestützter Produkt-Workflows: Prompt-Patterns für Discovery-Interviews, agentische Ticket-Triage und wo KI einem PM hilft — oder nicht.",
-      tags: ["LLMs", "Agents", "PM tooling"],
+        "Ein KI-fokussiertes Projekt für Freelancer und Agenturen nimmt Form an. Noch nicht zeigbar — die Enthüllung folgt.",
+      tags: ["KI", "Freelancer", "Agenturen"],
+      isMystery: true,
     },
   ],
   education: [

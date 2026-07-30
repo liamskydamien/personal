@@ -40,6 +40,7 @@ export interface Project {
   tags?: string[];
   size: string;
   isStat?: boolean;
+  isMystery?: boolean;
   hasImage?: boolean;
 }
 
@@ -54,6 +55,7 @@ export interface SideProject {
   description: string;
   tags: string[];
   link?: SideProjectLink;
+  isMystery?: boolean;
 }
 
 export interface Education {

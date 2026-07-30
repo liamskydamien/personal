@@ -22,9 +22,16 @@ export function SideProjects() {
       <div className="page">
         <div className="side-grid">
           {profile.sideProjects.map((s, i) => (
-            <div key={i} className="side-card">
+            <div key={i} className={s.isMystery ? "side-card side-mystery" : "side-card"}>
               <div className="side-card-head">
-                <h3>{s.title}</h3>
+                <h3>
+                  {s.isMystery && (
+                    <span className="mystery-glyph mystery-glyph-inline" aria-hidden="true">
+                      ?
+                    </span>
+                  )}
+                  {s.title}
+                </h3>
                 {s.grade && <span className="grade-pill">{s.grade}</span>}
               </div>
               <p>{s.description}</p>

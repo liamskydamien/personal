@@ -1,6 +1,27 @@
 import type { Project } from "@/lib/profile";
 
 export function ProjectCard({ p }: { p: Project; idx?: number }) {
+  if (p.isMystery) {
+    return (
+      <div className={"proj-card proj-mystery " + p.size} aria-label={p.title}>
+        <div className="proj-eyebrow">{p.eyebrow}</div>
+        <div className="mystery-glyph" aria-hidden="true">
+          ?
+        </div>
+        <h3>{p.title}</h3>
+        <div className="proj-role">{p.role}</div>
+        <p>{p.description}</p>
+        <div className="proj-meta">
+          {p.tags?.map((t) => (
+            <span key={t} className="chip chip-mono">
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   if (p.isStat) {
     return (
       <div className={"proj-card proj-stat " + p.size}>

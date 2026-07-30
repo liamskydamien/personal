@@ -129,10 +129,13 @@ export const profileEn: LocalizedProfileContent = {
   ],
   projects: [
     {
-      title: "200K+ users",
-      role: "Reach across mobile & web",
-      eyebrow: "Scale",
-      isStat: true,
+      title: "Something new with ZEISS",
+      role: "Announcement soon",
+      eyebrow: "Coming soon",
+      description:
+        "The next ZEISS project is already in the works — same team, new product surface. Details are still under wraps.",
+      tags: ["ZEISS", "In progress"],
+      isMystery: true,
       size: "tall",
     },
     {
@@ -197,11 +200,12 @@ export const profileEn: LocalizedProfileContent = {
       tags: ["Figma", "Design Thinking", "Mobile"],
     },
     {
-      title: "AI Workflows for PMs",
-      grade: "In progress",
+      title: "Something new for freelancers & agencies",
+      grade: "Coming soon",
       description:
-        "Currently exploring LLM-assisted product workflows: prompt patterns for discovery interviews, agentic ticket triage, and where AI helps a PM versus where it doesn't.",
-      tags: ["LLMs", "Agents", "PM tooling"],
+        "An AI-focused project built for freelancers and agencies is taking shape. Not ready to be shown yet — the reveal is coming.",
+      tags: ["AI", "Freelancers", "Agencies"],
+      isMystery: true,
     },
   ],
   education: [
