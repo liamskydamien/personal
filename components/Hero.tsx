@@ -16,7 +16,7 @@ const TERMINAL_SCRIPT = [
       { k: "primary", v: '"Product Manager"' },
       { k: "also", v: '["Designer", "Developer"]' },
       { k: "exploring", v: '"AI & the world"' },
-      { k: "based_in", v: '"Cologne, Germany 🌍"', last: true },
+      { k: "based_in", v: '"Bonn, Germany 🌍"', last: true },
     ],
   },
   { kind: "spacer" as const },
